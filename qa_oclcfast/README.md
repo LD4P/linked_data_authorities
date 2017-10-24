@@ -18,5 +18,7 @@ The configurations in `config/authorities/linked_data` directory are designed to
 * oclcfast_direct.json - Provides a configuration for directly accessing the OCLC FAST vocabulary as provided by OCLC.
 * oclcfast_ld4l_cache.json - Provides a configuration for accessing the LD4L-Labs cache of the OCLC FAST vocabulary.
 
-[Technical Documentation](https://www.oclc.org/developer/develop/web-services/fast-api/linked-data.en.html)
-[Download](http://www.oclc.org/research/themes/data-science/fast/download.html) (n-triples)
+## Reference
+
+* [Technical Documentation](https://www.oclc.org/developer/develop/web-services/fast-api/linked-data.en.html)
+* [Download](http://www.oclc.org/research/themes/data-science/fast/download.html) (n-triples)

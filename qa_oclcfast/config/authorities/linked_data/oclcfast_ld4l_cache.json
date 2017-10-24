@@ -29,7 +29,7 @@
     "url": {
       "@context": "http://www.w3.org/ns/hydra/context.jsonld",
       "@type": "IriTemplate",
-      "template": "http://services.ld4l.org/ld4l_services/fast_batch.jsp?query={?query}&maxRecords={?maxRecords}&lang={?lang}",
+      "template": "http://services.ld4l.org/ld4l_services/fast_batch.jsp?query={?query}&entity={?subauth}&maxRecords={?maxRecords}&lang={?lang}",
       "variableRepresentation": "BasicRepresentation",
       "mapping": [
         {
@@ -37,6 +37,13 @@
           "variable": "query",
           "property": "hydra:freetextQuery",
           "required": true
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "subauth",
+          "property": "hydra:freetextQuery",
+          "required": false,
+          "default": ""
         },
         {
           "@type": "IriTemplateMapping",
@@ -55,11 +62,20 @@
       ]
     },
     "qa_replacement_patterns": {
-      "query":   "query"
+      "query":   "query",
+      "subauth": "subauth"
     },
     "results": {
       "label_predicate":    "http://www.loc.gov/mads/rdf/v1#authoritativeLabel",
       "sort_predicate":     "http://vivoweb.org/ontology/core#rank"
+    },
+    "subauthorities": {
+      "person":         "Person",
+      "organization":   "Organization",
+      "place":          "Place",
+      "intangible":     "Intangible",
+      "geocoordinates": "GeoCoordinates",
+      "creative_work":  "CreativeWork"
     }
   }
 }

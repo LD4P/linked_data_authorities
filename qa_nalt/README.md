@@ -20,7 +20,9 @@ The configurations in `config/authorities/linked_data` directory are designed to
 
 NOTE: At this writing, NALT does not support a query API which returns a serialization of linked data.  As such, the direct configuration only supports fetching an individual term.  The local configuration provides an example of how to setup support for both term fetch and search query.
 
-[Download](https://agclass.nal.usda.gov/download.shtml) (rdf-xml)
+## Reference
+
+* [Download](https://agclass.nal.usda.gov/download.shtml) (rdf-xml)
 
 ## Creating a local cache of NALT authority data
 

@@ -17,5 +17,7 @@ The configurations in `config/authorities/linked_data` directory are designed to
 
 * dbpedia_ld4l_cache.json - Provides a configuration for accessing the LD4L-Labs cache of the DBpedia vocabulary.
 
-[Technical Documentation](http://wiki.dbpedia.org/OnlineAccess#1.2%20Public%20Faceted%20Web%20Service%20Interface)
-[Download](http://wiki.dbpedia.org/downloads-2016-04) Seems like there should be a newer one, but I wasn't able to find it.
+## Reference
+
+* [Technical Documentation](http://wiki.dbpedia.org/OnlineAccess#1.2%20Public%20Faceted%20Web%20Service%20Interface)
+* [Download](http://wiki.dbpedia.org/downloads-2016-04) Seems like there should be a newer one, but I wasn't able to find it.

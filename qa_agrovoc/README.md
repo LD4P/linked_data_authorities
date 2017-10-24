@@ -17,9 +17,11 @@ The configurations in `config/authorities/linked_data` directory are designed to
 
 * agrovoc_direct.json - Provides a configuration for directly accessing the AGROVOC vocabulary as provided by FAO.
 
-[Technical Documentation](http://aims.fao.org/vest-registry/vocabularies/agrovoc-multilingual-agricultural-thesaurus)
-[Swagger Config](https://github.com/NatLibFi/Skosmos/blob/master/swagger.json)
-[Download](https://aims-fao.atlassian.net/wiki/spaces/AGV/pages/2949126/Releases) (n-triples or rdf-xml)
+## Reference
+
+* [Technical Documentation](http://aims.fao.org/vest-registry/vocabularies/agrovoc-multilingual-agricultural-thesaurus)
+* [Swagger Config](https://github.com/NatLibFi/Skosmos/blob/master/swagger.json)
+* [Download](https://aims-fao.atlassian.net/wiki/spaces/AGV/pages/2949126/Releases) (n-triples or rdf-xml)
 
 ## Creating a local cache of NALT authority data
 

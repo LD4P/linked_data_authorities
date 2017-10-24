@@ -19,10 +19,8 @@
     },
     "term_id": "URI",
     "results": {
-      "label_predicate":    "http://www.geonames.org/ontology#name",
-      "altlabel_predicate": "http://www.geonames.org/ontology#countryCode",
-      "broader_predicate":  "http://www.geonames.org/ontology#parentFeature",
-      "sameas_predicate":   "http://www.w3.org/2000/01/rdf-schema#seeAlso"
+      "label_predicate":    "http://dbpedia.org/property/name",
+      "sameas_predicate":   "http://www.w3.org/2002/07/owl#sameAs"
     }
   },
   "search": {
@@ -59,9 +57,9 @@
     },
     "language": ["en"],
     "results": {
-      "label_predicate":    "http://www.geonames.org/ontology#name",
-      "altlabel_predicate": "http://www.geonames.org/ontology#countryCode",
-      "sort_predicate":     "http://www.geonames.org/ontology#name"
+      "id_predicate":       "http://dbpedia.org/property/id",
+      "label_predicate":    "http://dbpedia.org/property/name",
+      "sort_predicate":     "http://vivoweb.org/ontology/core#rank"
     }
   }
 }

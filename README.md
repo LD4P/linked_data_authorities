@@ -8,14 +8,12 @@ NOTE: All the work in this repository is experimental.  You are welcome to try o
 
 There are a number of authorities that have been tested with the system architecture described in this document.
   
-  * [qa_agrovoc](https://github.com/ld4l-labs/linked_data_authories/tree/master/qa_agrovoc/README.md)
-  * [qa_dbpedia](https://github.com/ld4l-labs/linked_data_authories/tree/master/qa_dbpedia/README.md)
-  * [qa_geonames](https://github.com/ld4l-labs/linked_data_authories/tree/master/qa_geonames/README.md)
-  * [qa_loc](https://github.com/ld4l-labs/linked_data_authories/tree/master/qa_loc/README.md) (names, subjects, and genres)
-  * [qa_nalt](https://github.com/ld4l-labs/linked_data_authories/tree/master/qa_nalt/README.md)  
-  * [qa_oclcfast](https://github.com/ld4l-labs/linked_data_authories/tree/master/qa_oclcfas/README.md)  
-
-TODO: Also include oclc_fast, agrovoc
+  * [qa_agrovoc](https://github.com/ld4l-labs/linked_data_authorities/tree/master/qa_agrovoc)
+  * [qa_dbpedia](https://github.com/ld4l-labs/linked_data_authorities/tree/master/qa_dbpedia)
+  * [qa_geonames](https://github.com/ld4l-labs/linked_data_authorities/tree/master/qa_geonames)
+  * [qa_loc](https://github.com/ld4l-labs/linked_data_authorities/tree/master/qa_loc) (names, subjects, and genres)
+  * [qa_nalt](https://github.com/ld4l-labs/linked_data_authorities/tree/master/qa_nalt)  
+  * [qa_oclcfast](https://github.com/ld4l-labs/linked_data_authorities/tree/master/qa_oclcfast)  
   
 See each of the sub-directories of this project starting with `qa_`.  Each addresses a separate authority.  Each vocabulary has it's own README that addresses configuration and setup specific to that authority.  General information about setup is in this README.
 
@@ -174,7 +172,7 @@ Sample qa_server search results...
    "label":"intestinal absorption"}]
 ```
 
-### Test that QA generates the expected linked data authority server URL
+#### Test that QA generates the expected linked data authority server URL
 
 If you don't see any results, you can check that the correct URL for the linked data server is generated.  In the QA server, search log/development.log for `QA Linked Data search url:`.  Then you can copy/paste that URL into a browser or use curl in the terminal to verify that the generated URL accessing the linked data authority server actually returns data as expected.
 
@@ -207,7 +205,7 @@ Sample qa_server term fetch results...
   "http://schema.org/sameAs":["http://id.loc.gov/authorities/names/n89103996","https://viaf.org/viaf/3272855"]}}
 ```
 
-### Test that QA generates the expected linked data authority server URL for term fetch
+#### Test that QA generates the expected linked data authority server URL for term fetch
 
 If you don't see any results, you can check that the correct URL for the linked data server is generated.  In the QA server, search log/development.log for `QA Linked Data term url:`.  Then you can copy/paste that URL into a browser or use curl in the terminal to verify that the generated URL accessing the linked data authority server actually returns data as expected.
 

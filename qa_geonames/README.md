@@ -18,7 +18,11 @@ The configurations in `config/authorities/linked_data` directory are designed to
 * geonames_direct.json - Provides a configuration for directly accessing the GeoNames vocabulary as provided by GeoNames.
 * geonames_ld4l_cache.json - Provides a configuration for accessing the LD4L-Labs cache of the GeoNames vocabulary.
 
-[Technical Documentation](http://www.geonames.org/export/geonames-search.html)
-[Download](http://www.geonames.org/ontology/documentation.html) (custom format – see notes for processing)
+NOTE: For geonames_direct.json, you need to change the username from `demo` to your username.  You can signup for a user name on the [GeoNames login page](http://www.geonames.org/login).
+
+## Reference
+
+* [Technical Documentation](http://www.geonames.org/export/geonames-search.html)
+* [Download](http://www.geonames.org/ontology/documentation.html) (custom format – see notes for processing)
 
 NOTE: GeoNames download…  At the end of the Entry Points section of http://www.geonames.org/ontology/documentation.html there is a link to a file containing "RDF".  The file is a pair of repeating lines, a URI and a single RDF/XML document as a string as a second line.  I had to write a loader program that reads the file, parses the even numbered lines into models and then emit the models as n-triples to feed into fuseki.  See [qa_geonames/script/Loader.java](https://github.com/ld4l-labs/linked_data_authorities/blob/master/script/Loader.java)

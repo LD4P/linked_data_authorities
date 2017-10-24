@@ -34,5 +34,7 @@ The configurations in `config/authorities/linked_data` directory are designed to
 
 NOTE: At this writing, Library of Congress does not support a query API of id.loc.gov which returns a serialization of linked data.  As such, the direct configuration only supports fetching an individual term.  The cache configurations support both term fetch and search query.
 
-[Technical Documentation](http://id.loc.gov/techcenter/)
-[Download](http://id.loc.gov/download/) (n-triples or rdf-xml)
+## Reference
+
+* [Technical Documentation](http://id.loc.gov/techcenter/)
+* [Download](http://id.loc.gov/download/) (n-triples or rdf-xml)
