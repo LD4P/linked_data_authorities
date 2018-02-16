@@ -15,7 +15,7 @@
       ]
     },
     "qa_replacement_patterns": {
-      "term_id": "term_id"
+      "term_id": "term_uri"
     },
     "term_id": "URI",
     "results": {

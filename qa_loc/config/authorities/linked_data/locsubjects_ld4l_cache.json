@@ -3,21 +3,21 @@
     "url": {
       "@context": "http://www.w3.org/ns/hydra/context.jsonld",
       "@type":    "IriTemplate",
-      "template": "http://guardian.slis.uiowa.edu:8080/ld4l_services/loc_subject_lookup.jsp?uri={?term_uri}",
+      "template": "http://services.ld4l.org/ld4l_services/loc_subject_lookup.jsp?uri=http%3A%2F%2Fid%2Eloc%2Egov%2Fauthorities%2Fsubjects%2F{?term_id}",
       "variableRepresentation": "BasicRepresentation",
       "mapping": [
         {
           "@type":    "IriTemplateMapping",
-          "variable": "term_uri",
+          "variable": "term_id",
           "property": "hydra:freetextQuery",
           "required": true
         }
       ]
     },
     "qa_replacement_patterns": {
-      "term_id": "term_uri"
+      "term_id": "term_id"
     },
-    "term_id": "URI",
+    "term_id": "ID",
     "results": {
       "id_predicate": "http://id.loc.gov/vocabulary/identifiers/lccn",
       "label_predicate": "http://www.w3.org/2004/02/skos/core#prefLabel",
@@ -29,7 +29,7 @@
     "url": {
       "@context": "http://www.w3.org/ns/hydra/context.jsonld",
       "@type": "IriTemplate",
-      "template": "http://services.ld4l.org/ld4l_services/loc_subject_batch.jsp?query={?query}&maxRecords={?maxRecords}&lang={?lang}",
+      "template": "http://services.ld4l.org/ld4l_services/loc_subject_batch.jsp?query={?query}&entity={?subauth}&maxRecords={?maxRecords}&lang={?lang}",
       "variableRepresentation": "BasicRepresentation",
       "mapping": [
         {
@@ -37,6 +37,13 @@
           "variable": "query",
           "property": "hydra:freetextQuery",
           "required": true
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "subauth",
+          "property": "hydra:freetextQuery",
+          "required": false,
+          "default": ""
         },
         {
           "@type": "IriTemplateMapping",
@@ -55,11 +62,20 @@
       ]
     },
     "qa_replacement_patterns": {
-      "query":   "query"
+      "query":   "query",
+      "subauth": "subauth"
     },
     "results": {
       "label_predicate":    "http://www.loc.gov/mads/rdf/v1#authoritativeLabel",
       "sort_predicate":     "http://vivoweb.org/ontology/core#rank"
+    },
+    "subauthorities": {
+      "person":         "Person",
+      "organization":   "Organization",
+      "place":          "Place",
+      "intangible":     "Intangible",
+      "geocoordinates": "GeoCoordinates",
+      "work":           "Work"
     }
   }
 }
