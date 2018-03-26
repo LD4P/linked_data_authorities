@@ -10,7 +10,8 @@
           "@type":    "IriTemplateMapping",
           "variable": "term_uri",
           "property": "hydra:freetextQuery",
-          "required": true
+          "required": true,
+          "encode":   true
         }
       ]
     },
@@ -43,7 +44,7 @@
           "variable": "subauth",
           "property": "hydra:freetextQuery",
           "required": false,
-          "default": ""
+          "default": "all"
         },
         {
           "@type": "IriTemplateMapping",
@@ -72,12 +73,17 @@
       "sort_predicate":     "http://vivoweb.org/ontology/core#rank"
     },
     "subauthorities": {
-      "person":         "Person",
-      "organization":   "Organization",
-      "place":          "Place",
-      "intangible":     "Intangible",
-      "geocoordinates": "GeoCoordinates",
-      "work":           "Work"
+      "area":           "A",
+      "place":          "P",
+      "area_and_place": "AP",
+      "water":          "H",
+      "park":           "L",
+      "road":           "R",
+      "spot":           "S",
+      "terrain":        "T",
+      "undersea":       "U",
+      "vegetation":     "V",
+      "all":            "all"
     }
   }
 }

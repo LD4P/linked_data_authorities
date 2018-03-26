@@ -65,9 +65,12 @@
     },
     "subauthorities": {
       "topic":          "oclc.topic",
+      "geocoordinates": "oclc.geographic",
       "geographic":     "oclc.geographic",
       "event_name":     "oclc.eventName",
+      "person":         "oclc.personalName",
       "personal_name":  "oclc.personalName",
+      "organization":   "oclc.corporateName",
       "corporate_name": "oclc.corporateName",
       "uniform_title":  "oclc.uniformTitle",
       "period":         "oclc.period",

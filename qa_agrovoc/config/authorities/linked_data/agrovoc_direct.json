@@ -3,21 +3,22 @@
     "url": {
       "@context": "http://www.w3.org/ns/hydra/context.jsonld",
       "@type":    "IriTemplate",
-      "template": "http://artemide.art.uniroma2.it:8081/agrovoc/rest/v1/data?uri=http://aims.fao.org/aos/agrovoc/{?term_id}",
+      "template": "http://artemide.art.uniroma2.it:8081/agrovoc/rest/v1/data?uri={?term_uri}",
       "variableRepresentation": "BasicRepresentation",
       "mapping": [
         {
           "@type":    "IriTemplateMapping",
-          "variable": "term_id",
+          "variable": "term_uri",
           "property": "hydra:freetextQuery",
-          "required": true
+          "required": true,
+          "encode":   true
         }
       ]
     },
     "qa_replacement_patterns": {
-      "term_id": "term_id"
+      "term_id": "term_uri"
     },
-    "term_id": "ID",
+    "term_id": "URI",
     "language": ["en"],
     "results": {
       "label_predicate":    "http://www.w3.org/2004/02/skos/core#prefLabel",
@@ -31,7 +32,7 @@
     "url": {
       "@context": "http://www.w3.org/ns/hydra/context.jsonld",
       "@type":    "IriTemplate",
-      "template": "http://artemide.art.uniroma2.it:8081/agrovoc/rest/v1/search/?query=*{?query}*&lang={?lang}",
+      "template": "http://artemide.art.uniroma2.it:8081/agrovoc/rest/v1/search/?query=*{?query}*&lang={?lang}&maxhits={?maxRecords}",
       "variableRepresentation": "BasicRepresentation",
       "mapping": [
         {
@@ -46,6 +47,13 @@
           "property": "hydra:freetextQuery",
           "required": false,
           "default":  "en"
+        },
+        {
+          "@type":    "IriTemplateMapping",
+          "variable": "maxRecords",
+          "property": "hydra:freetextQuery",
+          "required": false,
+          "default":  "20"
         }
       ]
     },

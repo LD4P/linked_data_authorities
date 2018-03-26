@@ -10,7 +10,8 @@
           "@type": "IriTemplateMapping",
           "variable": "term_uri",
           "property": "hydra:freetextQuery",
-          "required": true
+          "required": true,
+          "encode":   false
         }
       ]
     },

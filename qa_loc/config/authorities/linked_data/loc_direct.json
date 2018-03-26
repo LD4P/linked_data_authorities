@@ -39,7 +39,8 @@
       "classification": "classification",
       "child_subject": "childrensSubjects",
       "genre": "genreForms",
-      "demographic": "demographicTerms"
+      "demographic": "demographicTerms",
+      "music_performance": "performanceMediums"
     }
   },
   "search": {}
