@@ -26,3 +26,5 @@ NOTE: For geonames_direct.json, you need to change the username from `demo` to y
 * [Download](http://www.geonames.org/ontology/documentation.html) (custom format – see notes for processing)
 
 NOTE: GeoNames download…  At the end of the Entry Points section of http://www.geonames.org/ontology/documentation.html there is a link to a file containing "RDF".  The file is a pair of repeating lines, a URI and a single RDF/XML document as a string as a second line.  I had to write a loader program that reads the file, parses the even numbered lines into models and then emit the models as n-triples to feed into fuseki.  See [qa_geonames/script/Loader.java](https://github.com/ld4l-labs/linked_data_authorities/blob/master/script/Loader.java)
+
+NOTE: If you download GeoNames, it includes data for all feature codes.  In the LD4L cache of GeoNames, we separate the data by feature code and set each up to respond as a sub-authority to get more accurate query results. 

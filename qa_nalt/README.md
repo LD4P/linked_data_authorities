@@ -16,9 +16,10 @@ The configurations in `config/authorities/linked_data` directory are designed to
 ## Supported Configurations
 
 * nalt_direct.json - Provides a configuration for directly accessing the NALT vocabulary. (search not supported - see note below)
+* nalt_ld4l_cache.json - Provides a configuration for accessing the LD4L cache of the NALT vocabulary.
 * nalt_local.json - Provides a generalized configuration that can be used as a starting point for setting up a configuration to a local cache server.
 
-NOTE: At this writing, NALT does not support a query API which returns a serialization of linked data.  As such, the direct configuration only supports fetching an individual term.  The local configuration provides an example of how to setup support for both term fetch and search query.
+NOTE: At this writing, NALT does not support a query API which returns a serialization of linked data.  As such, the direct configuration only supports fetching an individual term.  The ld4l_cache and local configurations provide examples of how to setup support for both term fetch and search query.
 
 ## Reference
 
