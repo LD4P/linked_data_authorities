@@ -1,0 +1,9 @@
+---
+authority:
+    service: ld4l_cache
+search:
+  -
+    query: malignant
+term:
+  -
+    identifier: 'http://purl.bioontology.org/ontology/MESH/C535700'

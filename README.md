@@ -11,11 +11,15 @@ There are a number of authorities that have been tested with the system architec
   * [qa_agrovoc](https://github.com/ld4l-labs/linked_data_authorities/tree/master/qa_agrovoc)
   * [qa_dbpedia](https://github.com/ld4l-labs/linked_data_authorities/tree/master/qa_dbpedia)
   * [qa_geonames](https://github.com/ld4l-labs/linked_data_authorities/tree/master/qa_geonames)
+  * [qa_getty](https://github.com/ld4l-labs/linked_data_authorities/tree/master/qa_getty)
   * [qa_loc](https://github.com/ld4l-labs/linked_data_authorities/tree/master/qa_loc) (names, subjects, and genres)
-  * [qa_nalt](https://github.com/ld4l-labs/linked_data_authorities/tree/master/qa_nalt)  
+  * [qa_mesh](https://github.com/ld4l-labs/linked_data_authorities/tree/master/qa_mesh)
+  * [qa_nalt](https://github.com/ld4l-labs/linked_data_authorities/tree/master/qa_nalt)
   * [qa_oclcfast](https://github.com/ld4l-labs/linked_data_authorities/tree/master/qa_oclcfast)  
   
 See each of the sub-directories of this project starting with `qa_`.  Each addresses a separate authority.  Each vocabulary has it's own README that addresses configuration and setup specific to that authority.  General information about setup is in this README.
+
+NOTE: You can define your own authority configurations.  Information on defining configurations is available in the questioning authority (qa) gem [README](https://github.com/samvera/questioning_authority#linked-open-data-lod-authorities)
 
 ## Architecture Overview
 
@@ -23,9 +27,11 @@ The system described here is designed to process linked data search results into
 
 There are two servers that drive this system.
 
-1. linked data authority server - This server can be controlled by the authority provider or you can use a locally cached version of the authority.  It must be querable via curl with the query passed as a parameter.  Additionally, it must return a serialization of linked data (e.g. rdf-xml, json-ld, n-triples, turtle, etc.)
+1. linked data authority server - This server can be controlled by the authority provider or you can use a locally cached version of the authority.  It must be querable via curl with the query or term uri passed as a parameter.  Additionally, it must return a serialization of linked data (e.g. rdf-xml, json-ld, n-triples, turtle, etc.)
 
-2. questioning authority normalization server - This server is an installation of the [questioning authority (qa) gem](https://rubygems.org/gems/qa).  A configuration file specific for the desired vocabulary is installed in the `config/authorities/linked_data` directory of the QA server.  This tells QA how to extract information from the linked data search results in order to normalize the results that are passed to the application.
+2. questioning authority normalization server - This server provides access to linked data authorities and a process for converting linked data from the various ontologies to a normalized json format that is the same for all ontologies.  There are two primary ways to setup this server.
+  1. For Ruby applications, include the [questioning authority (qa) gem](https://rubygems.org/gems/qa).  The copy in the configurations and validations from this repo into the same directory in your app for each authority you want to support.  
+  2. For non-ruby applications or for ruby applications that want to share a single access point, you can clone or fork the [ld4l/qa_server](https://github.com/ld4l-labs/qa_server) which is a stand alone small application that includes the questioning authority gem.  The qa_server app includes all the configurations in this repo.  If you do not want all of them, you can remove the authority configuration and validation files.  
 
 More information on setting up these servers follows in the Usage section.
 
@@ -209,3 +215,4 @@ Sample qa_server term fetch results...
 
 If you don't see any results, you can check that the correct URL for the linked data server is generated.  In the QA server, search log/development.log for `QA Linked Data term url:`.  Then you can copy/paste that URL into a browser or use curl in the terminal to verify that the generated URL accessing the linked data authority server actually returns data as expected.
 
+See [qa_server's validation process](https://github.com/ld4l-labs/qa_server#connection-and-accuracy-validations) for an interactive approach to testing connections and accuracy.

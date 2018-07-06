@@ -3,7 +3,7 @@
     "url": {
       "@context": "http://www.w3.org/ns/hydra/context.jsonld",
       "@type": "IriTemplate",
-      "template": "{?term_uri}.ntriples",
+      "template": "{?term_uri}?locale={?lang}",
       "variableRepresentation": "BasicRepresentation",
       "mapping": [
         {
@@ -12,6 +12,13 @@
           "property": "hydra:freetextQuery",
           "required": true,
           "encode":   false
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "lang",
+          "property": "hydra:freetextQuery",
+          "required": false,
+          "default": "en"
         }
       ]
     },

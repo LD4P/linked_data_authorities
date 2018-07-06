@@ -3,7 +3,7 @@
     "url": {
       "@context": "http://www.w3.org/ns/hydra/context.jsonld",
       "@type":    "IriTemplate",
-      "template": "http://services.ld4l.org/ld4l_services/loc_name_lookup.jsp?uri={?term_uri}",
+      "template": "http://services.ld4l.org/ld4l_services/getty_lookup.jsp?uri={?term_uri}",
       "variableRepresentation": "BasicRepresentation",
       "mapping": [
         {
@@ -20,17 +20,18 @@
     },
     "term_id": "URI",
     "results": {
-      "id_predicate": "http://id.loc.gov/vocabulary/identifiers/lccn",
-      "label_predicate": "http://www.w3.org/2004/02/skos/core#prefLabel",
+      "label_predicate":    "http://www.w3.org/2004/02/skos/core#prefLabel",
       "altlabel_predicate": "http://www.w3.org/2004/02/skos/core#altLabel",
-      "sameas_predicate": "http://www.w3.org/2004/02/skos/core#exactMatch"
+      "broader_predicate":  "http://www.w3.org/2004/02/skos/core#broader",
+      "narrower_predicate": "http://www.w3.org/2004/02/skos/core#narrower",
+      "sameas_predicate":   "http://www.w3.org/2004/02/skos/core#exactMatch"
     }
   },
   "search": {
     "url": {
       "@context": "http://www.w3.org/ns/hydra/context.jsonld",
       "@type": "IriTemplate",
-      "template": "http://services.ld4l.org/ld4l_services/loc_name_batch.jsp?query={?query}&maxRecords={?maxRecords}&entity={?subauth}&lang={?lang}",
+      "template": "http://services.ld4l.org/ld4l_services/getty_batch.jsp?query={?query}&entity=Place&maxRecords={?maxRecords}&lang={?lang}",
       "variableRepresentation": "BasicRepresentation",
       "mapping": [
         {
@@ -38,13 +39,6 @@
           "variable": "query",
           "property": "hydra:freetextQuery",
           "required": true
-        },
-        {
-          "@type": "IriTemplateMapping",
-          "variable": "subauth",
-          "property": "hydra:freetextQuery",
-          "required": false,
-          "default": ""
         },
         {
           "@type": "IriTemplateMapping",
@@ -63,26 +57,15 @@
       ]
     },
     "qa_replacement_patterns": {
-      "query":   "query",
-      "subauth": "subauth"
+      "query":   "query"
     },
     "results": {
-      "label_predicate":    "http://www.loc.gov/mads/rdf/v1#authoritativeLabel",
+      "id_predicate":       "http://purl.org/dc/terms/identifier",
+      "label_predicate":    "http://www.w3.org/2004/02/skos/core#prefLabel",
       "sort_predicate":     "http://vivoweb.org/ontology/core#rank",
       "context": {
-        "RWO":  "http://www.loc.gov/mads/rdf/v1#identifiesRWO"
+        "Parent": "http://vocab.getty.edu/ontology#parentString"
       }
-    },
-    "subauthorities": {
-      "person":         "Person",
-      "personal_name":  "Person",
-      "organization":   "Organization",
-      "corporate_name": "Organization",
-      "place":          "Place",
-      "intangible":     "Intangible",
-      "geocoordinates": "GeoCoordinates",
-      "work":           "Work",
-      "title":          "Work"
     }
   }
 }

@@ -1,0 +1,30 @@
+---
+authority:
+  service: ld4l_cache
+search:
+  -
+    query: 'mark twain'
+  -
+    query: ferret
+    subauth: concept
+  -
+    query: tribunal
+    subauth: event
+  -
+    query: 'mark twain'
+    subauth: person
+  -
+    query: 'mark twain'
+    subauth: organization
+  -
+    query: Cayuga
+    subauth: place
+  -
+    query: 'mark twain'
+    subauth: intangible
+  -
+    query: 'mark twain'
+    subauth: work
+term:
+  -
+    identifier: '1914919'

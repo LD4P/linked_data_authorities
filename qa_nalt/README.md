@@ -1,6 +1,6 @@
 # Overview
 
-This document describes how access NALT authority to work with linked data. 
+This document describes accessing NALT authority and working with results returned as linked data. 
 
 ## NALT vocabulary
 

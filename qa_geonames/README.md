@@ -1,6 +1,6 @@
 # Overview
 
-This document describes how access GeoNames authority to work with linked data. 
+This document describes accessing GeoNames authority and working with results returned as linked data. 
 
 ## GeoNames vocabulary
 

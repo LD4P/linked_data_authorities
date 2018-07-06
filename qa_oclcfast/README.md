@@ -1,6 +1,6 @@
 # Overview
 
-This document describes how access OCLC FAST authority to work with linked data. 
+This document describes accessing OCLC FAST authority and working with results returned as linked data. 
 
 ## OCLC FAST vocabulary
 

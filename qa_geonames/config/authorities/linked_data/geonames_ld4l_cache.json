@@ -70,7 +70,20 @@
     "results": {
       "label_predicate":    "http://www.geonames.org/ontology#name",
       "altlabel_predicate": "http://www.geonames.org/ontology#countryCode",
-      "sort_predicate":     "http://vivoweb.org/ontology/core#rank"
+      "sort_predicate":     "http://vivoweb.org/ontology/core#rank",
+      "context": {
+        "Parent": "http://www.geonames.org/ontology#parentADM1",
+        "Parent2": "http://www.geonames.org/ontology#parentADM2",
+        "Parent Country": "http://www.geonames.org/ontology#parentCountry",
+        "Children": "http://www.geonames.org/ontology#childrenFeatures",
+        "Country": "http://www.geonames.org/ontology#countryCode",
+        "Population": "http://www.geonames.org/ontology#population",
+        "Latitude": "http://www.w3.org/2003/01/geo/wgs84_pos#lat",
+        "Longitude": "http://www.w3.org/2003/01/geo/wgs84_pos#long",
+        "Altitude": "http://www.w3.org/2003/01/geo/wgs84_pos#alt",
+        "Feature Class": "http://www.geonames.org/ontology#featureClass",
+        "Feature Code": "http://www.geonames.org/ontology#featureCode"
+      }
     },
     "subauthorities": {
       "area":           "A",
