@@ -1,6 +1,6 @@
 # Overview
 
-This document describes how access dbPedia authority to work with linked data. 
+This document describes accessing dbPedia authority and working with results returned as linked data. 
 
 ## dbPedia vocabulary
 

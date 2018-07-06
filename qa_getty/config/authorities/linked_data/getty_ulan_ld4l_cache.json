@@ -3,7 +3,7 @@
     "url": {
       "@context": "http://www.w3.org/ns/hydra/context.jsonld",
       "@type":    "IriTemplate",
-      "template": "http://services.ld4l.org/ld4l_services/loc_genre_lookup.jsp?uri={?term_uri}",
+      "template": "http://services.ld4l.org/ld4l_services/getty_lookup.jsp?uri={?term_uri}",
       "variableRepresentation": "BasicRepresentation",
       "mapping": [
         {
@@ -20,19 +20,18 @@
     },
     "term_id": "URI",
     "results": {
-      "id_predicate": "http://id.loc.gov/vocabulary/identifiers/lccn",
-      "label_predicate": "http://www.w3.org/2004/02/skos/core#prefLabel",
+      "label_predicate":    "http://www.w3.org/2004/02/skos/core#prefLabel",
       "altlabel_predicate": "http://www.w3.org/2004/02/skos/core#altLabel",
       "broader_predicate":  "http://www.w3.org/2004/02/skos/core#broader",
       "narrower_predicate": "http://www.w3.org/2004/02/skos/core#narrower",
-      "sameas_predicate": "http://www.w3.org/2004/02/skos/core#exactMatch"
+      "sameas_predicate":   "http://www.w3.org/2004/02/skos/core#exactMatch"
     }
   },
   "search": {
     "url": {
       "@context": "http://www.w3.org/ns/hydra/context.jsonld",
       "@type": "IriTemplate",
-      "template": "http://services.ld4l.org/ld4l_services/loc_genre_batch.jsp?query={?query}&entity={?subauth}&maxRecords={?maxRecords}&lang={?lang}&context={?context}",
+      "template": "http://services.ld4l.org/ld4l_services/getty_batch.jsp?query={?query}&entity={?subauth}&maxRecords={?maxRecords}&lang={?lang}",
       "variableRepresentation": "BasicRepresentation",
       "mapping": [
         {
@@ -46,7 +45,7 @@
           "variable": "subauth",
           "property": "hydra:freetextQuery",
           "required": false,
-          "default": ""
+          "default": "Person+Organization"
         },
         {
           "@type": "IriTemplateMapping",
@@ -61,13 +60,6 @@
           "property": "hydra:freetextQuery",
           "required": false,
           "default": "en"
-        },
-        {
-          "@type": "IriTemplateMapping",
-          "variable": "context",
-          "property": "hydra:freetextQuery",
-          "required": false,
-          "default": "false"
         }
       ]
     },
@@ -76,24 +68,14 @@
       "subauth": "subauth"
     },
     "results": {
-      "label_predicate":    "http://www.loc.gov/mads/rdf/v1#authoritativeLabel",
-      "sort_predicate":     "http://vivoweb.org/ontology/core#rank",
-      "selector_predicate": "http://vivoweb.org/ontology/core#rank",
-      "context": {
-        "Alternate Label":  "http://www.w3.org/2004/02/skos/core#altLabel",
-        "Broader":          "http://www.w3.org/2004/02/skos/core#broader",
-        "Narrower":         "http://www.w3.org/2004/02/skos/core#narrower",
-        "Exact Match":      "http://www.w3.org/2004/02/skos/core#exactMatch",
-        "Note":             "http://www.w3.org/2004/02/skos/core#note"
-      }
+      "id_predicate":       "http://purl.org/dc/terms/identifier",
+      "label_predicate":    "http://www.w3.org/2004/02/skos/core#prefLabel",
+      "sort_predicate":     "http://vivoweb.org/ontology/core#rank"
     },
     "subauthorities": {
-      "person":         "Person",
-      "organization":   "Organization",
-      "place":          "Place",
-      "intangible":     "Intangible",
-      "geocoordinates": "GeoCoordinates",
-      "work":           "Work"
+      "person":            "Person",
+      "organization":      "Organization"
     }
   }
 }
+

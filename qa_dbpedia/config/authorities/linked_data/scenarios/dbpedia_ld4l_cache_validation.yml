@@ -1,0 +1,9 @@
+---
+authority:
+  service: ld4l_cache
+search:
+  -
+    query: 'Barack Obama'
+term:
+  -
+    identifier: 'http://dbpedia.org/resource/Barack_Obama'

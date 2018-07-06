@@ -71,6 +71,7 @@
       "sort_predicate":     "http://vivoweb.org/ontology/core#rank"
     },
     "subauthorities": {
+      "concept":        "Concept",
       "event":          "Event",
       "person":         "Person",
       "personal_name":  "Person",

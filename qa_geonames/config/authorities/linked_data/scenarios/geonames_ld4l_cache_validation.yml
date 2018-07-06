@@ -1,0 +1,41 @@
+---
+authority:
+  service: ld4l_cache
+search:
+  -
+    query: Ithaca
+  -
+    query: France
+    subauth: area
+    expect: 'http://sws.geonames.org/261707/'
+    postion: 10
+  -
+    query: Ithaca
+    subauth: place
+  -
+    query: Ithaca
+    subauth: area_and_place
+  -
+    query: Cayuga
+    subauth: water
+  -
+    query: Cayuga
+    subauth: park
+  -
+    query: Cayuga
+    subauth: road
+  -
+    query: Cayuga
+    subauth: spot
+  -
+    query: Cayuga
+    subauth: terrain
+  -
+    query: Pacific
+    subauth: undersea
+  -
+    query: Red
+    subauth: vegetation
+term:
+  -
+    identifier: 'http://sws.geonames.org/261707/'

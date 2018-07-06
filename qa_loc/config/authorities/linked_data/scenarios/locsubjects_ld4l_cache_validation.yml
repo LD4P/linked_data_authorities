@@ -1,0 +1,27 @@
+---
+authority:
+  service: ld4l_cache
+search:
+  -
+    query: science
+  -
+    query: science
+    subauth: person
+  -
+    query: science
+    subauth: organization
+  -
+    query: science
+    subauth: place
+  -
+    query: science
+    subauth: intangible
+  -
+    query: science
+    subauth: geocoordinates
+  -
+    query: science
+    subauth: work
+term:
+  -
+    identifier: 'http://id.loc.gov/authorities/subjects/sh2003008312'

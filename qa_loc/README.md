@@ -1,6 +1,6 @@
 # Overview
 
-This document describes how access Library of Congress (LoC) authorities to work with linked data. 
+This document describes accessing Library of Congress (LoC) authorities and working with results returned as linked data. 
 
 ## locnames vocabulary
 

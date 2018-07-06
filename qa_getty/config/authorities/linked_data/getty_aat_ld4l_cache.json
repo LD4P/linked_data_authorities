@@ -1,0 +1,109 @@
+{
+  "term": {
+    "url": {
+      "@context": "http://www.w3.org/ns/hydra/context.jsonld",
+      "@type":    "IriTemplate",
+      "template": "http://services.ld4l.org/ld4l_services/getty_lookup.jsp?uri={?term_uri}",
+      "variableRepresentation": "BasicRepresentation",
+      "mapping": [
+        {
+          "@type":    "IriTemplateMapping",
+          "variable": "term_uri",
+          "property": "hydra:freetextQuery",
+          "required": true,
+          "encode":   true
+        }
+      ]
+    },
+    "qa_replacement_patterns": {
+      "term_id": "term_uri"
+    },
+    "term_id": "URI",
+    "results": {
+      "label_predicate":    "http://www.w3.org/2004/02/skos/core#prefLabel",
+      "altlabel_predicate": "http://www.w3.org/2004/02/skos/core#altLabel",
+      "broader_predicate":  "http://www.w3.org/2004/02/skos/core#broader",
+      "narrower_predicate": "http://www.w3.org/2004/02/skos/core#narrower",
+      "sameas_predicate":   "http://www.w3.org/2004/02/skos/core#exactMatch"
+    }
+  },
+  "search": {
+    "url": {
+      "@context": "http://www.w3.org/ns/hydra/context.jsonld",
+      "@type": "IriTemplate",
+      "template": "http://services.ld4l.org/ld4l_services/getty_batch.jsp?query={?query}{?subauth}&entity=Concept&maxRecords={?maxRecords}&lang={?lang}",
+      "variableRepresentation": "BasicRepresentation",
+      "mapping": [
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "query",
+          "property": "hydra:freetextQuery",
+          "required": true
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "subauth",
+          "property": "hydra:freetextQuery",
+          "required": false,
+          "default": ""
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "maxRecords",
+          "property": "hydra:freetextQuery",
+          "required": false,
+          "default": "20"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "lang",
+          "property": "hydra:freetextQuery",
+          "required": false,
+          "default": "en"
+        }
+      ]
+    },
+    "qa_replacement_patterns": {
+      "query":   "query",
+      "subauth": "subauth"
+    },
+    "results": {
+      "id_predicate":       "http://purl.org/dc/terms/identifier",
+      "label_predicate":    "http://www.w3.org/2004/02/skos/core#prefLabel",
+      "sort_predicate":     "http://vivoweb.org/ontology/core#rank"
+    },
+    "subauthorities": {
+      "Activities":                              "&facet=300264090",
+      "Activities__Disciplines":                  "&facet=300054134",
+      "Activities__Events":                       "&facet=300054722",
+      "Activities__Functions":                    "&facet=300054593",
+      "Activities__Physical_and_Mental":          "&facet=300222468",
+      "Activities__Processes_and_Techniques":     "&facet=300053001",
+      "Agents":                                  "&facet=300264089",
+      "Agents__Living_Organisms":                 "&facet=300265673",
+      "Agents__Organizations":                    "&facet=300234770",
+      "Agents__People":                           "&facet=300024978",
+      "Associated_Concepts":                     "&facet=300264086",
+      "Associated_Concepts__Associated_Concepts": "&facet=300055126",
+      "Brand_Names":                             "&facet=300343372",
+      "Brand_Names__Brand_Names":                 "&facet=300379011",
+      "Materials":                               "&facet=300264091",
+      "Materials__Materials":                     "&facet=300010357",
+      "Objects":                                 "&facet=300264092",
+      "Objects__Built_Environment":               "&facet=300264550",
+      "Objects__Components":                      "&facet=300241490",
+      "Objects__Furnishings_and_Equipment":       "&facet=300264551",
+      "Objects__Object_Genres":                   "&facet=300185711",
+      "Objects__Object_Groupings and Systems":    "&facet=300241489",
+      "Objects__Visual_and_Verbal_Communication": "&facet=300264552",
+      "Physical_Attributes":                     "&facet=300264087",
+      "Physical_Attributes__Attributes_and_Properties": "&facet=300123559",
+      "Physical_Attributes__Color":               "&facet=300131647",
+      "Physical_Attributes__Conditions_and_Effects": "&facet=300186269",
+      "Physical_Attributes__Design_Elements":     "&facet=300123558",
+      "Styles_and_Periods":                      "&facet=300264088",
+      "Styles_and_Periods__Styles_and_Periods":   "&facet=300015646"
+    }
+  }
+}
+

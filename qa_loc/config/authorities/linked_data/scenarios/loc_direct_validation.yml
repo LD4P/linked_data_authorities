@@ -1,0 +1,25 @@
+---
+authority:
+  service: direct
+term:
+  -
+    identifier: n92016188
+    subauth: names
+  -
+    identifier: sh85118553
+    subauth: subjects
+  -
+    identifier: gf2011026370
+    subauth: genre
+  -
+    identifier: 'KF26.L383'
+    subauth: classification
+  -
+    identifier: sj96006043
+    subauth: child_subject
+  -
+    identifier: dg2015060550
+    subauth: demographic
+  -
+    identifier: mp2013015171
+    subauth: music_performance

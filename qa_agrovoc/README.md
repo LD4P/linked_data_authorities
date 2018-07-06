@@ -1,6 +1,6 @@
 # Overview
 
-This document describes how access AGROVOC authority to work with linked data. 
+This document describes accessing AGROVOC authority and working with results returned as linked data. 
 
 ## AGROVOC vocabulary
 

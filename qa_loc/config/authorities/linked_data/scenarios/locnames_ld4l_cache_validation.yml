@@ -1,0 +1,27 @@
+---
+authority:
+  service: ld4l_cache
+search:
+  -
+    query: 'mark twain'
+  -
+    query: 'mark twain'
+    subauth: person
+  -
+    query: 'mark twain'
+    subauth: organization
+  -
+    query: Cayuga
+    subauth: place
+  -
+    query: Cayuga
+    subauth: intangible
+  -
+    query: Cayuga
+    subauth: geocoordinates
+  -
+    query: 'mark twain'
+    subauth: work
+term:
+  -
+    identifier: 'http://id.loc.gov/authorities/names/n92016188'

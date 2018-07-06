@@ -1,0 +1,115 @@
+---
+authority:
+  service: ld4l_cache
+search:
+  -
+    query: amphora
+  -
+    query: events
+    subauth: Activities
+  -
+    query: film
+    subauth: Activities__Disciplines
+    result_size: 100
+  -
+    query: exhibitions
+    subauth: Activities__Events
+  -
+    query:  inspection
+    subauth: Activities__Functions
+    result_size: 100
+  -
+    query: public speaking
+    subauth: Activities__Physical_and_Mental
+    result_size: 100
+  -
+    query: transporting
+    subauth: Activities__Processes_and_Techniques
+  -
+    query: domestic
+    subauth: Agents
+  -
+    query: domestic
+    subauth: Agents__Living_Organisms
+  -
+    query:  funding agencies
+    subauth: Agents__Organizations
+    result_size: 100
+  -
+    query: domestic
+    subauth: Agents__People
+  -
+    query: social science
+    subauth: Associated_Concepts
+    result_size: 100
+  -
+    query: air quality
+    subauth: Associated_Concepts__Associated_Concepts
+  -
+    query: brand name additives
+    subauth: Brand_Names
+    result_size: 100
+  -
+    query: tyvek
+    subauth: Brand_Names__Brand_Names
+    result_size: 100
+  -
+    query: copper
+    subauth: Materials
+  -
+    query: copper
+    subauth: Materials__Materials
+  -
+    query: built environment
+    subauth: Objects
+  -
+    query: backstops
+    subauth: Objects__Built_Environment
+    result_size: 100
+  -
+    query: reveals
+    subauth: Objects__Components
+    result_size: 100
+  -
+    query: Boston rocker
+    subauth: Objects__Furnishings_and_Equipment
+    result_size: 100
+  -
+    query: natural objects
+    subauth: Objects__Object_Genres
+    result_size: 100
+  -
+    query: libraries
+    subauth: Objects__Object_Groupings and Systems
+  -
+    query: admission ticket
+    subauth: Objects__Visual_and_Verbal_Communication
+    result_size: 100
+  -
+    query: density
+    subauth: Physical_Attributes
+    result_size: 100
+  -
+    query: density
+    subauth: Physical_Attributes__Attributes_and_Properties
+    result_size: 100
+  -
+    query: pearl
+    subauth: Physical_Attributes__Color
+    result_size: 100
+  -
+    query: cracks
+    subauth: Physical_Attributes__Conditions_and_Effects
+  -
+    query: compass roses
+    subauth: Physical_Attributes__Design_Elements
+    result_size: 100
+  -
+    query: Contemporary
+    subauth: Styles_and_Periods
+  -
+    query: Contemporary
+    subauth: Styles_and_Periods__Styles_and_Periods
+term:
+  -
+    identifier: 'http://vocab.getty.edu/aat/300265730'

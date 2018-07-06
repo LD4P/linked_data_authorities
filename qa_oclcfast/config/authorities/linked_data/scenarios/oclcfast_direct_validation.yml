@@ -1,0 +1,58 @@
+---
+authority:
+  service: direct
+search:
+  -
+    query: 'mark twain'
+    replacements:
+      maximumRecords: '4'
+  -
+    query: 'mark twain'
+    subauth: person
+    result_size: 100
+    replacements:
+      maximumRecords: '4'
+  -
+    query: 'mark twain'
+    subauth: organization
+    replacements:
+      maximumRecords: '4'
+  -
+    query: Cayuga
+    subauth: topic
+    replacements:
+      maximumRecords: '4'
+  -
+    query: Festival
+    subauth: event_name
+    replacements:
+      maximumRecords: '4'
+  -
+    query: Cayuga
+    subauth: geocoordinates
+    replacements:
+      maximumRecords: '4'
+  -
+    query: 'mark twain'
+    subauth: uniform_title
+    replacements:
+      maximumRecords: '4'
+  -
+    query: '1276-1285'
+    subauth: period
+    result_size: 50
+    replacements:
+      maximumRecords: '4'
+  -
+    query: animation
+    subauth: form
+    replacements:
+      maximumRecords: '4'
+  -
+    query: animation
+    subauth: alt_lc
+    replacements:
+      maximumRecords: '4'
+term:
+  -
+    identifier: '1914919'
