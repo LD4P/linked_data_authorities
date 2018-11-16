@@ -2,7 +2,29 @@
 
 This document describes general information about how to use external authorities directly, access the LD4L-Labs cache server, and how to setup a local cache of an external authory's linked data for query and use in an end-user application. 
 
-NOTE: All the work in this repository is experimental.  You are welcome to try out any and all of the work described here.  We recommend that you contact the development team before attempting to use this in a production system.
+## Installation
+
+### Using in rails app with QA already installed
+
+If you have a ruby app with QA installed (ex. [Samvera's Hyrax](http://github.com/samvera/hyrax)), all you need to do is copy the authority's config file from one of the directories starting with `qa_` in subdirectory `config/authorities/linked_data` of this repository into `config/authorities/linked_data` directory in your app and restart the rails server.
+
+### Using in rails app without QA installed
+
+See the README for [Questioning Authority](http://github.com/samvera/questioning_authority) (QA) for instructions on installing QA in your rails app.  After it is installed, all you need to do is copy the authority's config file from one of the directories starting with `qa_` in subdirectory `config/authorities/linked_data` of this repository into `config/authorities/linked_data` directory in your app and restart the rails server.
+
+### Using with non-rails app or as stand alone with a rails app
+
+[LD4P QA Server](http://github.com/LD4P/qa_server) provides a simple rails app that runs a standalone QA Server that can be accessed by any app in any language using API calls through CURL.  This document talks about the architecture we used to setup a QA Server along with a cache of the authority data.  Additional details on setting up a QA Server can be found in the [README](https://github.com/LD4P/qa_server/blob/master/README.md) of the LD4P QA Server code repository.  You can explore a working QA Server that has all the authorities described in this repository installed at http://lookup.ld4l.org/.
+
+### STATUS OF WORK
+
+* *CONFIGS:*  
+  * `_ld4l_cache` - configs ending in `_ld4l_cache` are configured to go against our cache of the authorities data.  You can do experiments with this, but it is not recommended for production systems.  We do not provide warning when make modifications to this data or the systems supporting it.
+  * `_direct` - configs ending in `_direct` are configured to go directly against an external authority (e.g. LOC, GeoNames, etc.).  These have been tested with QA and we use in our production apps.  You can copy these into your QA system to use them.  You will want to test them out for use in your apps to be sure they meet your production needs.
+* *QA_SERVER:*  
+  * [ld4p/qa_server](http://github.com/LD4P/qa_server) - The qa server engine has releases which are considered stable.  You can launch your own QA server based for your production apps.  See installation instructions in the [README](http://github.com/LD4P/qa_server/blob/master/README.md).  Add issues if you do experience problems.
+  * http://lookup.ld4l.org - This is our production QA Server app.  You are welcome to do experiments with this app, but it is not recommended that you use this in your prodcution system.  It is for use by the LD4P grant and partners.  Notification will be given to grant partners when changes will be made to this system, but broader notification will not be provided.
+* *CACHE:*  The cache work described in this documentation is primarily setup in support of the LD4P grant and its partners.  You are welcome to try out any and all of the work described here.  Notification will be given to grant partners when changes will be made to this system, but broader notification will not be provided.
 
 ## Vocabularies
 
@@ -12,7 +34,7 @@ There are a number of authorities that have been tested with the system architec
   * [qa_dbpedia](https://github.com/ld4l-labs/linked_data_authorities/tree/master/qa_dbpedia)
   * [qa_geonames](https://github.com/ld4l-labs/linked_data_authorities/tree/master/qa_geonames)
   * [qa_getty](https://github.com/ld4l-labs/linked_data_authorities/tree/master/qa_getty)
-  * [qa_loc](https://github.com/ld4l-labs/linked_data_authorities/tree/master/qa_loc) (names, subjects, and genres)
+  * [qa_loc](https://github.com/ld4l-labs/linked_data_authorities/tree/master/qa_loc) (names, subjects, genres, music performance, and demographics)
   * [qa_mesh](https://github.com/ld4l-labs/linked_data_authorities/tree/master/qa_mesh)
   * [qa_nalt](https://github.com/ld4l-labs/linked_data_authorities/tree/master/qa_nalt)
   * [qa_oclcfast](https://github.com/ld4l-labs/linked_data_authorities/tree/master/qa_oclcfast)  
