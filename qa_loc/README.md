@@ -20,6 +20,18 @@ The Library of Congress Genre/Form Terms for Library and Archival Materials (LCG
 
 [More Information](http://id.loc.gov/authorities/genreForms.html)
 
+## locperformance vocabulary
+
+The Library of Medium of Performance Thesaurus for Music (LCMPT) is a stand-alone vocabulary that provides terminology to describe the instruments, voices, etc., used in the performance of musical works.
+
+[More Information](http://id.loc.gov/authorities/performanceMediums.html)
+
+## locdemographics vocabulary
+
+The Library of Congress Demographic Group Terms (LCDGT) is designed to describe the characteristics of the intended audiences of resources, and also the creators of, and contributors to, those resources.
+
+[More Information](http://id.loc.gov/authorities/demographicTerms.html)
+
 
 # Usage
 
@@ -31,6 +43,8 @@ The configurations in `config/authorities/linked_data` directory are designed to
 * locnames_ld4l_cache.json - Provides a configuration for accessing the LD4L-Labs cache of the Library of Congress Name Authority File (NAF) vocabulary.
 * locsubjects_ld4l_cache.json - Provides a configuration for accessing the LD4L-Labs cache of the Library of Congress Subject Headings (LCSH) vocabulary.
 * locgenres_ld4l_cache.json - Provides a configuration for accessing the LD4L-Labs cache of the Library of Congress Genre/Form Terms for Library and Archival Materials (LCGFT) vocabulary.
+* locperformance_ld4l_cache.json - Provides a configuration for accessing the LD4L-Labs cache of the Library of Congress Medium of Performance Thesaurus for Music (LCMPT) vocabulary.
+* locdemographics_ld4l_cache.json - Provides a configuration for accessing the LD4L-Labs cache of the Library of Congress Demographic Group Terms (LCDGT) vocabulary.
 
 NOTE: At this writing, Library of Congress does not support a query API of id.loc.gov which returns a serialization of linked data.  As such, the direct configuration only supports fetching an individual term.  The cache configurations support both term fetch and search query.
 
