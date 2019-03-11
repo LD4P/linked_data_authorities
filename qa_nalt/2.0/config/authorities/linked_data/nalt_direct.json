@@ -1,0 +1,33 @@
+{
+  "QA_CONFIG_VERSION": "2.0",
+  "term": {
+    "url": {
+      "@context": "http://www.w3.org/ns/hydra/context.jsonld",
+      "@type": "IriTemplate",
+      "template": "{term_uri}.rdf",
+      "variableRepresentation": "BasicRepresentation",
+      "mapping": [
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "term_uri",
+          "property": "hydra:freetextQuery",
+          "required": true,
+          "encode":   false
+        }
+      ]
+    },
+    "qa_replacement_patterns": {
+      "term_id": "term_uri"
+    },
+    "term_id": "URI",
+    "language": ["en"],
+    "results": {
+      "label_predicate":    "http://www.w3.org/2004/02/skos/core#prefLabel",
+      "altlabel_predicate": "http://www.w3.org/2004/02/skos/core#altLabel",
+      "broader_predicate":  "http://www.w3.org/2004/02/skos/core#broader",
+      "narrower_predicate": "http://www.w3.org/2004/02/skos/core#narrower",
+      "sameas_predicate":   "http://www.w3.org/2004/02/skos/core#exactMatch"
+    }
+  },
+  "search": {}
+}

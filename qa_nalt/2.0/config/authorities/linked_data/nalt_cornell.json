@@ -1,0 +1,95 @@
+{
+  "term": {
+    "url": {
+      "@context": "http://www.w3.org/ns/hydra/context.jsonld",
+      "@type":    "IriTemplate",
+      "template": "http://api.library.cornell.edu/skosmos/rest/v1/nalt/data?uri={?term_uri}",
+      "variableRepresentation": "BasicRepresentation",
+      "mapping": [
+        {
+          "@type":    "IriTemplateMapping",
+          "variable": "term_uri",
+          "property": "hydra:freetextQuery",
+          "required": true,
+          "encode":   false
+        }
+      ]
+    },
+    "qa_replacement_patterns": {
+      "term_id": "term_uri"
+    },
+    "term_id": "URI",
+    "language": ["en"],
+    "results": {
+      "label_predicate":    "http://www.w3.org/2004/02/skos/core#prefLabel",
+      "altlabel_predicate": "http://www.w3.org/2004/02/skos/core#altLabel",
+      "broader_predicate":  "http://www.w3.org/2004/02/skos/core#broader",
+      "narrower_predicate": "http://www.w3.org/2004/02/skos/core#narrower",
+      "sameas_predicate":   "http://www.w3.org/2004/02/skos/core#exactMatch"
+    }
+  },
+  "search": {
+    "url": {
+      "@context": "http://www.w3.org/ns/hydra/context.jsonld",
+      "@type":    "IriTemplate",
+      "template": "http://api.library.cornell.edu/skosmos/rest/v1/nalt/search?query=*{?query}*&lang={?lang}&maxhits={?maxRecords}",
+      "variableRepresentation": "BasicRepresentation",
+      "mapping": [
+        {
+          "@type":    "IriTemplateMapping",
+          "variable": "query",
+          "property": "hydra:freetextQuery",
+          "required": true
+        },
+        {
+          "@type":    "IriTemplateMapping",
+          "variable": "maxRecords",
+          "property": "hydra:freetextQuery",
+          "required": false,
+          "default":  "20"
+        },
+        {
+          "@type":    "IriTemplateMapping",
+          "variable": "lang",
+          "property": "hydra:freetextQuery",
+          "required": false,
+          "default":  "en"
+        }
+      ]
+    },
+    "qa_replacement_patterns": {
+      "query": "query"
+    },
+    "results": {
+      "id_predicate":    "http://purl.org/dc/terms/identifier",
+      "label_predicate": "http://www.w3.org/2004/02/skos/core#prefLabel",
+      "sort_predicate":  "http://www.w3.org/2004/02/skos/core#prefLabel"
+    },
+    "context": [
+      {
+        "predicate": "http://www.w3.org/2004/02/skos/core#broader",
+        "columnname": "Broader",
+        "value": "internal_uri",
+        "selectable": true
+      },
+      {
+        "predicate": "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "columnname": "Term Matching Search",
+        "value": "constant",
+        "selectable": true
+      },
+      {
+        "predicate": "http://www.w3.org/2004/02/skos/core#narrower",
+        "columnname": "Narrower",
+        "value": "internal_uri",
+        "selectable": true
+      },
+      {
+        "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+        "columnname": "Exact Match",
+        "value": "external_uri",
+        "selectable": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "QA_CONFIG_VERSION": "2.0",
+  "prefixes": {
+    "skos": "http://www.w3.org/2004/02/skos/core#"
+  },
+  "term": {
+    "url": {
+      "@context": "http://www.w3.org/ns/hydra/context.jsonld",
+      "@type":    "IriTemplate",
+      "template": "http://services.ld4l.org/ld4l_services/agrovoc_lookup.jsp?uri={term_uri}",
+      "variableRepresentation": "BasicRepresentation",
+      "mapping": [
+        {
+          "@type":    "IriTemplateMapping",
+          "variable": "term_uri",
+          "property": "hydra:freetextQuery",
+          "required": true,
+          "encode":   true
+        }
+      ]
+    },
+    "qa_replacement_patterns": {
+      "term_id": "term_uri"
+    },
+    "term_id": "URI",
+    "results": {
+      "label_predicate":    "http://www.w3.org/2004/02/skos/core#prefLabel",
+      "altlabel_predicate": "http://www.w3.org/2004/02/skos/core#altLabel",
+      "broader_predicate":  "http://www.w3.org/2004/02/skos/core#broader",
+      "narrower_predicate": "http://www.w3.org/2004/02/skos/core#narrower",
+      "sameas_predicate":   "http://www.w3.org/2004/02/skos/core#exactMatch"
+    }
+  },
+  "search": {
+    "url": {
+      "@context": "http://www.w3.org/ns/hydra/context.jsonld",
+      "@type": "IriTemplate",
+      "template": "http://services.ld4l.org/ld4l_services/agrovoc_batch.jsp?{?query}&{?maxRecords}&{?entity}&{?lang}",
+      "variableRepresentation": "BasicRepresentation",
+      "mapping": [
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "query",
+          "property": "hydra:freetextQuery",
+          "required": true
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "entity",
+          "property": "hydra:freetextQuery",
+          "required": false,
+          "default": ""
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "maxRecords",
+          "property": "hydra:freetextQuery",
+          "required": false,
+          "default": "20"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "lang",
+          "property": "hydra:freetextQuery",
+          "required": false,
+          "default": "en"
+        }
+      ]
+    },
+    "qa_replacement_patterns": {
+      "query":   "query",
+      "subauth": "entity"
+    },
+    "results": {
+      "label_predicate":    "http://www.w3.org/2004/02/skos/core#prefLabel",
+      "sort_predicate":     "http://vivoweb.org/ontology/core#rank"
+    },
+    "context": {
+      "groups": {
+        "hierarchy": {
+          "group_label_i18n": "qa.linked_data.authority.agrovoc_ld4l_cache.hierarchy",
+          "group_label_default": "Hierarchy"
+        }
+      },
+      "properties": [
+        {
+          "property_label_i18n": "qa.linked_data.authority.agrovoc_ld4l_cache.authoritative_label",
+          "property_label_default": "Authoritative Label",
+          "ldpath": "skos:prefLabel :: xsd:string",
+          "selectable": true,
+          "drillable": false
+        },
+        {
+          "group_id": "hierarchy",
+          "property_label_i18n": "qa.linked_data.authority.agrovoc_ld4l_cache.narrower",
+          "property_label_default": "Narrower",
+          "ldpath": "skos:narrower :: xsd:string",
+          "selectable": true,
+          "drillable": true,
+          "expansion_label_ldpath": "skos:prefLabel ::xsd:string",
+          "expansion_id_ldpath": "loc:lccn ::xsd:string"
+        },
+        {
+          "group_id": "hierarchy",
+          "property_label_i18n": "qa.linked_data.authority.agrovoc_ld4l_cache.broader",
+          "property_label_default": "Broader",
+          "ldpath": "skos:broader :: xsd:string",
+          "selectable": true,
+          "drillable": true,
+          "expansion_label_ldpath": "skos:prefLabel ::xsd:string",
+          "expansion_id_ldpath": "loc:lccn ::xsd:string"
+        }
+      ]
+    },
+    "subauthorities": {
+      "person":         "Person",
+      "organization":   "Organization",
+      "place":          "Place",
+      "intangible":     "Intangible",
+      "geocoordinates": "GeoCoordinates",
+      "work":           "Work"
+    }
+  }
+}
+

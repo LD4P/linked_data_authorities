@@ -1,0 +1,9 @@
+---
+authority:
+  service: ld4l_cache
+search:
+  -
+    query: memphis
+term:
+  -
+    identifier: 'http://vocab.getty.edu/tgn/7017750'

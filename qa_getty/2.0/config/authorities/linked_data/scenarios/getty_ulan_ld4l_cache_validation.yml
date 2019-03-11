@@ -1,0 +1,15 @@
+---
+authority:
+  service: ld4l_cache
+search:
+  -
+    query: washington
+  -
+    query: washington
+    subauth: person
+  -
+    query: washington
+    subauth: organization
+term:
+  -
+    identifier: 'http://vocab.getty.edu/ulan/500020427'

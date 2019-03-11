@@ -1,0 +1,37 @@
+{
+  "QA_CONFIG_VERSION": "2.0",
+  "term": {
+    "url": {
+      "@context": "http://www.w3.org/ns/hydra/context.jsonld",
+      "@type": "IriTemplate",
+      "template": "{term_uri}?locale={lang}",
+      "variableRepresentation": "BasicRepresentation",
+      "mapping": [
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "term_uri",
+          "property": "hydra:freetextQuery",
+          "required": true,
+          "encode":   false
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "lang",
+          "property": "hydra:freetextQuery",
+          "required": false,
+          "default": "en"
+        }
+      ]
+    },
+    "qa_replacement_patterns": {
+      "term_id": "term_uri"
+    },
+    "language": ["en"],
+    "term_id": "URI",
+    "results": {
+      "label_predicate": "http://www.w3.org/2000/01/rdf-schema#label",
+      "sameas_predicate": "http://www.w3.org/2002/07/owl#sameAs"
+    }
+  },
+  "search": {}
+}

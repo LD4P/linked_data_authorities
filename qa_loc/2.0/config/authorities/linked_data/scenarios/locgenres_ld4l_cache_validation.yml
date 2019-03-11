@@ -1,0 +1,99 @@
+---
+authority:
+  service: ld4l_cache
+search:
+  -
+    query: animation
+  -
+    query: animation
+    subauth: person
+  -
+    query: animation
+    subauth: organization
+  -
+    query: animation
+    subauth: place
+  -
+    query: animation
+    subauth: intangible
+  -
+    query: animation
+    subauth: geocoordinates
+  -
+    query: animation
+    subauth: work
+  -
+    query: Preliminary documents (Treaties)
+    position: 10
+    subject_uri: "http://id.loc.gov/authorities/genreForms/gf2011026703"
+    replacements:
+      maxRecords: '20'
+  -
+    query: Loose-leafs
+    position: 10
+    subject_uri: "http://id.loc.gov/authorities/genreForms/gf2011026373"
+    replacements:
+      maxRecords: '20'
+  -
+    query: Casebooks
+    position: 10
+    subject_uri: "http://id.loc.gov/authorities/genreForms/gf2011026115"
+    replacements:
+      maxRecords: '20'
+  -
+    query: Congresses, Conferences, Proceedings, Symposia
+    position: 10
+    subject_uri: "http://id.loc.gov/authorities/genreForms/gf2014026068"
+    replacements:
+      maxRecords: '20'
+  -
+    query: Law journals
+    position: 10
+    subject_uri: "http://id.loc.gov/authorities/genreForms/gf2011026352"
+    replacements:
+      maxRecords: '20'
+  -
+    query: Codes
+    position: 10
+    subject_uri: "http://id.loc.gov/authorities/genreForms/gf2011026611"
+    replacements:
+      maxRecords: '20'
+  -
+    query: Administrative rules
+    position: 10
+    subject_uri: "http://id.loc.gov/authorities/genreForms/gf2011026030"
+    replacements:
+      maxRecords: '20'
+  -
+    query: Conventions
+    position: 10
+    subject_uri: "http://id.loc.gov/authorities/genreForms/gf2011026707"
+    replacements:
+      maxRecords: '20'
+  -
+    query: Digests
+    position: 10
+    subject_uri: "http://id.loc.gov/authorities/genreForms/gf2011026349"
+    replacements:
+      maxRecords: '20'
+  -
+    query: Law reports
+    position: 10
+    subject_uri: "http://id.loc.gov/authorities/genreForms/gf2011026172"
+    replacements:
+      maxRecords: '20'
+  -
+    query: Interstate compacts
+    position: 10
+    subject_uri: "http://id.loc.gov/authorities/genreForms/gf2011026336"
+    replacements:
+      maxRecords: '20'
+  -
+    query: Noter-ups
+    position: 10
+    subject_uri: "http://id.loc.gov/authorities/genreForms/gf2011026136"
+    replacements:
+      maxRecords: '20'
+term:
+  -
+    identifier: "http://id.loc.gov/authorities/genreForms/gf2011026141"

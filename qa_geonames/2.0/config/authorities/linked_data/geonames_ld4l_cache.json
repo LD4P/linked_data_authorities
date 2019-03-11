@@ -1,0 +1,176 @@
+{
+  "QA_CONFIG_VERSION": "2.0",
+  "prefixes": {
+    "geonames": "http://www.geonames.org/ontology#",
+    "geo": "http://www.w3.org/2003/01/geo/wgs84_pos#"
+  },
+  "term": {
+    "url": {
+      "@context": "http://www.w3.org/ns/hydra/context.jsonld",
+      "@type":    "IriTemplate",
+      "template": "http://services.ld4l.org/ld4l_services/geonames_lookup.jsp?uri={term_uri}",
+      "variableRepresentation": "BasicRepresentation",
+      "mapping": [
+        {
+          "@type":    "IriTemplateMapping",
+          "variable": "term_uri",
+          "property": "hydra:freetextQuery",
+          "required": true,
+          "encode":   true
+        }
+      ]
+    },
+    "qa_replacement_patterns": {
+      "term_id": "term_uri"
+    },
+    "term_id": "URI",
+    "results": {
+      "label_predicate":    "http://www.geonames.org/ontology#name",
+      "altlabel_predicate": "http://www.geonames.org/ontology#countryCode",
+      "broader_predicate":  "http://www.geonames.org/ontology#parentFeature",
+      "sameas_predicate":   "http://www.w3.org/2000/01/rdf-schema#seeAlso"
+    }
+  },
+  "search": {
+    "url": {
+      "@context": "http://www.w3.org/ns/hydra/context.jsonld",
+      "@type": "IriTemplate",
+      "template": "http://services.ld4l.org/ld4l_services/geonames_batch.jsp?{?query}&{?entity}&{?maxRecords}&{?lang}",
+      "variableRepresentation": "BasicRepresentation",
+      "mapping": [
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "query",
+          "property": "hydra:freetextQuery",
+          "required": true
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "entity",
+          "property": "hydra:freetextQuery",
+          "required": false,
+          "default": "all"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "maxRecords",
+          "property": "hydra:freetextQuery",
+          "required": false,
+          "default": "20"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "lang",
+          "property": "hydra:freetextQuery",
+          "required": false,
+          "default": "en"
+        }
+      ]
+    },
+    "qa_replacement_patterns": {
+      "query":   "query",
+      "subauth": "entity"
+    },
+    "language": ["en"],
+    "results": {
+      "id_predicate":       ":subject_uri",
+      "label_predicate":    "http://www.geonames.org/ontology#name",
+      "altlabel_predicate": "http://www.geonames.org/ontology#countryCode",
+      "sort_predicate":     "http://vivoweb.org/ontology/core#rank"
+    },
+    "context": {
+      "properties": [
+        {
+          "property_label_i18n": "qa.linked_data.authority.geonames_ld4l_cache.parent_adm1_label",
+          "property_label_default": "Parent",
+          "ldpath": "geonames:parentADM1 :: xsd:string",
+          "selectable": false,
+          "drillable": false
+        },
+        {
+          "property_label_i18n": "qa.linked_data.authority.geonames_ld4l_cache.parent_adm2_label",
+          "property_label_default": "Parent2",
+          "ldpath": "geonames:parentADM2 :: xsd:string",
+          "selectable": false,
+          "drillable": false
+        },
+        {
+          "property_label_i18n": "qa.linked_data.authority.geonames_ld4l_cache.parent_country_label",
+          "property_label_default": "Parent Country",
+          "ldpath": "geonames:parentCountry :: xsd:string",
+          "selectable": false,
+          "drillable": false
+        },
+        {
+          "property_label_i18n": "qa.linked_data.authority.geonames_ld4l_cache.children_features_label",
+          "property_label_default": "Children",
+          "ldpath": "geonames:childrenFeatures :: xsd:string",
+          "selectable": false,
+          "drillable": false
+        },
+        {
+          "property_label_i18n": "qa.linked_data.authority.geonames_ld4l_cache.country_code_label",
+          "property_label_default": "Country",
+          "ldpath": "geonames:countryCode :: xsd:string",
+          "selectable": false,
+          "drillable": false
+        },
+        {
+          "property_label_i18n": "qa.linked_data.authority.geonames_ld4l_cache.population_label",
+          "property_label_default": "Population",
+          "ldpath": "geonames:population :: xsd:string",
+          "selectable": false,
+          "drillable": false
+        },
+        {
+          "property_label_i18n": "qa.linked_data.authority.geonames_ld4l_cache.latitude_label",
+          "property_label_default": "Latitude",
+          "ldpath": "geo:lat :: xsd:string",
+          "selectable": false,
+          "drillable": false
+        },
+        {
+          "property_label_i18n": "qa.linked_data.authority.geonames_ld4l_cache.longitude_label",
+          "property_label_default": "Longitude",
+          "ldpath": "geo:long :: xsd:string",
+          "selectable": false,
+          "drillable": false
+        },
+        {
+          "property_label_i18n": "qa.linked_data.authority.geonames_ld4l_cache.altitude_label",
+          "property_label_default": "Altitude",
+          "ldpath": "geo:alt :: xsd:string",
+          "selectable": false,
+          "drillable": false
+        },
+        {
+          "property_label_i18n": "qa.linked_data.authority.geonames_ld4l_cache.feature_class_label",
+          "property_label_default": "Feature Class",
+          "ldpath": "geonames:featureClass :: xsd:string",
+          "selectable": false,
+          "drillable": false
+        },
+        {
+          "property_label_i18n": "qa.linked_data.authority.geonames_ld4l_cache.feature_code_label",
+          "property_label_default": "Feature Code",
+          "ldpath": "geonames:featureCode :: xsd:string",
+          "selectable": false,
+          "drillable": false
+        }
+      ]
+    },
+    "subauthorities": {
+      "area":           "A",
+      "place":          "P",
+      "area_and_place": "AP",
+      "water":          "H",
+      "park":           "L",
+      "road":           "R",
+      "spot":           "S",
+      "terrain":        "T",
+      "undersea":       "U",
+      "vegetation":     "V",
+      "all":            "all"
+    }
+  }
+}

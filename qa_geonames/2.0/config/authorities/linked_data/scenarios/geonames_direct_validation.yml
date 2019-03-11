@@ -1,0 +1,9 @@
+---
+authority:
+  service: direct
+search:
+  -
+    query: Ithaca
+term:
+  -
+    identifier: 'http://sws.geonames.org/261707/'
