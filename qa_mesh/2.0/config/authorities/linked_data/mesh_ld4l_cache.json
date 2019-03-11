@@ -1,0 +1,71 @@
+{
+  "QA_CONFIG_VERSION": "2.0",
+  "term": {
+    "url": {
+      "@context": "http://www.w3.org/ns/hydra/context.jsonld",
+      "@type":    "IriTemplate",
+      "template": "http://services.ld4l.org/ld4l_services/mesh_lookup.jsp?uri={term_uri}",
+      "variableRepresentation": "BasicRepresentation",
+      "mapping": [
+        {
+          "@type":    "IriTemplateMapping",
+          "variable": "term_uri",
+          "property": "hydra:freetextQuery",
+          "required": true
+        }
+      ]
+    },
+    "qa_replacement_patterns": {
+      "term_id": "term_uri"
+    },
+    "term_id": "URI",
+    "results": {
+      "id_predicate":       "http://www.w3.org/2004/02/skos/core#notation",
+      "label_predicate":    "http://www.w3.org/2004/02/skos/core#prefLabel",
+      "altlabel_predicate": "http://www.w3.org/2004/02/skos/core#altLabel",
+      "broader_predicate":  "http://purl.bioontology.org/ontology/MESH/mapped_to",
+      "narrower_predicate": "http://purl.bioontology.org/ontology/MESH/mapped_from"
+    }
+  },
+  "search": {
+    "url": {
+      "@context": "http://www.w3.org/ns/hydra/context.jsonld",
+      "@type": "IriTemplate",
+      "template": "http://services.ld4l.org/ld4l_services/mesh_batch.jsp?{?query}&{?maxRecords}&{?lang}",
+      "variableRepresentation": "BasicRepresentation",
+      "mapping": [
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "query",
+          "property": "hydra:freetextQuery",
+          "required": true
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "maxRecords",
+          "property": "hydra:freetextQuery",
+          "required": false,
+          "default": "20"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "lang",
+          "property": "hydra:freetextQuery",
+          "required": false,
+          "default": "en"
+        }
+      ]
+    },
+    "qa_replacement_patterns": {
+      "query":   "query"
+    },
+    "results": {
+      "id_predicate":       "http://www.w3.org/2004/02/skos/core#notation",
+      "label_predicate":    "http://www.w3.org/2004/02/skos/core#prefLabel",
+      "sort_predicate":     "http://vivoweb.org/ontology/core#rank",
+      "context": {
+        "Definition":   "http://www.w3.org/2004/02/skos/core#definition"
+      }
+    }
+  }
+}

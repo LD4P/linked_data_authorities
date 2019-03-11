@@ -1,0 +1,73 @@
+{
+  "QA_CONFIG_VERSION": "2.0",
+  "term": {
+    "url": {
+      "@context": "http://www.w3.org/ns/hydra/context.jsonld",
+      "@type":    "IriTemplate",
+      "template": "http://services.ld4l.org/ld4l_services/getty_lookup.jsp?uri={term_uri}",
+      "variableRepresentation": "BasicRepresentation",
+      "mapping": [
+        {
+          "@type":    "IriTemplateMapping",
+          "variable": "term_uri",
+          "property": "hydra:freetextQuery",
+          "required": true,
+          "encode":   true
+        }
+      ]
+    },
+    "qa_replacement_patterns": {
+      "term_id": "term_uri"
+    },
+    "term_id": "URI",
+    "results": {
+      "label_predicate":    "http://www.w3.org/2004/02/skos/core#prefLabel",
+      "altlabel_predicate": "http://www.w3.org/2004/02/skos/core#altLabel",
+      "broader_predicate":  "http://www.w3.org/2004/02/skos/core#broader",
+      "narrower_predicate": "http://www.w3.org/2004/02/skos/core#narrower",
+      "sameas_predicate":   "http://www.w3.org/2004/02/skos/core#exactMatch"
+    }
+  },
+  "search": {
+    "url": {
+      "@context": "http://www.w3.org/ns/hydra/context.jsonld",
+      "@type": "IriTemplate",
+      "template": "http://services.ld4l.org/ld4l_services/getty_batch.jsp?{?query}&entity=Place&{?maxRecords}&{?lang}",
+      "variableRepresentation": "BasicRepresentation",
+      "mapping": [
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "query",
+          "property": "hydra:freetextQuery",
+          "required": true
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "maxRecords",
+          "property": "hydra:freetextQuery",
+          "required": false,
+          "default": "20"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "lang",
+          "property": "hydra:freetextQuery",
+          "required": false,
+          "default": "en"
+        }
+      ]
+    },
+    "qa_replacement_patterns": {
+      "query":   "query"
+    },
+    "results": {
+      "id_predicate":       "http://purl.org/dc/terms/identifier",
+      "label_predicate":    "http://www.w3.org/2004/02/skos/core#prefLabel",
+      "sort_predicate":     "http://vivoweb.org/ontology/core#rank",
+      "context": {
+        "Parent": "http://vocab.getty.edu/ontology#parentString"
+      }
+    }
+  }
+}
+

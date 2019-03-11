@@ -1,0 +1,9 @@
+---
+authority:
+  service: ld4l_cache
+search:
+  -
+    query: band
+term:
+  -
+    identifier: 'http://id.loc.gov/authorities/performanceMediums/mp2013015793'

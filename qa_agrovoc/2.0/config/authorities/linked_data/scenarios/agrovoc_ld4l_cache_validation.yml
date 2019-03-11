@@ -1,0 +1,9 @@
+---
+authority:
+    service: ld4l_cache
+search:
+  -
+    query: milk
+term:
+  -
+    identifier: 'http://aims.fao.org/aos/agrovoc/c_9513'

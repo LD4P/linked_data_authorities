@@ -1,0 +1,9 @@
+---
+authority:
+  service: ld4l_cache
+search:
+  -
+    query: milk
+term:
+  -
+    identifier: 'http://lod.nal.usda.gov/nalt/20627'
