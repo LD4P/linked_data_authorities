@@ -18,7 +18,7 @@ The configurations in `config/authorities/linked_data` directory are designed to
 * geonames_direct.json - Provides a configuration for directly accessing the GeoNames vocabulary as provided by GeoNames.
 * geonames_ld4l_cache.json - Provides a configuration for accessing the LD4L-Labs cache of the GeoNames vocabulary.
 
-NOTE: For geonames_direct.json, you need to change the username from `demo` to your username.  You can signup for a user name on the [GeoNames login page](http://www.geonames.org/login).
+NOTE: For geonames_direct.json, you need to change the username from `YOUR_GEONAMES_USERNAME` to your username.  You can signup for a user name on the [GeoNames login page](http://www.geonames.org/login).
 
 ## Reference
 
