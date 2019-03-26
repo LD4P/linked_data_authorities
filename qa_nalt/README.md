@@ -11,7 +11,7 @@ The NAL Agricultural Thesaurus (NALT) was originally prepared by staff of the Na
 
 # Usage
 
-The configurations in `config/authorities/linked_data` directory are designed to work with [ld4l-labs/qa_server](https://github.com/ld4l-labs/qa_server) to provide normalized access and data results.  See the [ld4l-labs/linked_data_authorities documentation](https://github.com/ld4l-labs/linked_data_authorities/blob/master/README.md) for more information on setting up a qa_server.
+The configurations in `config/authorities/linked_data` directory are designed to work with [ld4p/qa_server](https://github.com/ld4p/qa_server) to provide normalized access and data results.  See the [ld4p/linked_data_authorities documentation](https://github.com/ld4p/linked_data_authorities/blob/master/README.md) for more information on setting up a qa_server.
 
 ## Supported Configurations
 
@@ -27,7 +27,7 @@ NOTE: At this writing, NALT does not support a query API which returns a seriali
 
 ## Creating a local cache of NALT authority data
 
-You can create a local cache of NALT authority data by [downloading]() it into a local triplestore.  There are a number of triplestores that you can use for this purpose.  See the [ld4l-labs/linked_data_authorities documentation](https://github.com/ld4l-labs/linked_data_authorities/blob/master/README.md) for more information on setting up a local cache server. 
+You can create a local cache of NALT authority data by [downloading]() it into a local triplestore.  There are a number of triplestores that you can use for this purpose.  See the [ld4p/linked_data_authorities documentation](https://github.com/ld4p/linked_data_authorities/blob/master/README.md) for more information on setting up a local cache server. 
 
 You may want to consider using [SKOSMOS](http://skosmos.org/) to hold NALT data.  It is optimized for [SKOS ontology](https://www.w3.org/TR/2008/WD-skos-reference-20080829/skos.html) based linked data.
 

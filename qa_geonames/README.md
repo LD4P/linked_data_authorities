@@ -11,7 +11,7 @@ The GeoNames geographical database covers all countries and contains over eleven
 
 # Usage
 
-The configurations in `config/authorities/linked_data` directory are designed to work with [ld4l-labs/qa_server](https://github.com/ld4l-labs/qa_server) to provide normalized access and data results.  See the [ld4l-labs/linked_data_authorities documentation](https://github.com/ld4l-labs/linked_data_authorities/blob/master/README.md) for more information on setting up a qa_server.
+The configurations in `config/authorities/linked_data` directory are designed to work with [ld4p/qa_server](https://github.com/ld4p/qa_server) to provide normalized access and data results.  See the [ld4p/linked_data_authorities documentation](https://github.com/ld4p/linked_data_authorities/blob/master/README.md) for more information on setting up a qa_server.
 
 ## Supported Configurations
 
@@ -25,6 +25,6 @@ NOTE: For geonames_direct.json, you need to change the username from `YOUR_GEONA
 * [Technical Documentation](http://www.geonames.org/export/geonames-search.html)
 * [Download](http://www.geonames.org/ontology/documentation.html) (custom format – see notes for processing)
 
-NOTE: GeoNames download…  At the end of the Entry Points section of http://www.geonames.org/ontology/documentation.html there is a link to a file containing "RDF".  The file is a pair of repeating lines, a URI and a single RDF/XML document as a string as a second line.  I had to write a loader program that reads the file, parses the even numbered lines into models and then emit the models as n-triples to feed into fuseki.  See [qa_geonames/script/Loader.java](https://github.com/ld4l-labs/linked_data_authorities/blob/master/script/Loader.java)
+NOTE: GeoNames download…  At the end of the Entry Points section of http://www.geonames.org/ontology/documentation.html there is a link to a file containing "RDF".  The file is a pair of repeating lines, a URI and a single RDF/XML document as a string as a second line.  I had to write a loader program that reads the file, parses the even numbered lines into models and then emit the models as n-triples to feed into fuseki.  See [qa_geonames/script/Loader.java](https://github.com/ld4p/linked_data_authorities/blob/master/script/Loader.java)
 
 NOTE: If you download GeoNames, it includes data for all feature codes.  In the LD4L cache of GeoNames, we separate the data by feature code and set each up to respond as a sub-authority to get more accurate query results. 

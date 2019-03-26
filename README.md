@@ -30,14 +30,14 @@ See the README for [Questioning Authority](http://github.com/samvera/questioning
 
 There are a number of authorities that have been tested with the system architecture described in this document.
   
-  * [qa_agrovoc](https://github.com/ld4l-labs/linked_data_authorities/tree/master/qa_agrovoc)
-  * [qa_dbpedia](https://github.com/ld4l-labs/linked_data_authorities/tree/master/qa_dbpedia)
-  * [qa_geonames](https://github.com/ld4l-labs/linked_data_authorities/tree/master/qa_geonames)
-  * [qa_getty](https://github.com/ld4l-labs/linked_data_authorities/tree/master/qa_getty)
-  * [qa_loc](https://github.com/ld4l-labs/linked_data_authorities/tree/master/qa_loc) (names, subjects, genres, music performance, and demographics)
-  * [qa_mesh](https://github.com/ld4l-labs/linked_data_authorities/tree/master/qa_mesh)
-  * [qa_nalt](https://github.com/ld4l-labs/linked_data_authorities/tree/master/qa_nalt)
-  * [qa_oclcfast](https://github.com/ld4l-labs/linked_data_authorities/tree/master/qa_oclcfast)  
+  * [qa_agrovoc](https://github.com/ld4p/linked_data_authorities/tree/master/qa_agrovoc)
+  * [qa_dbpedia](https://github.com/ld4p/linked_data_authorities/tree/master/qa_dbpedia)
+  * [qa_geonames](https://github.com/ld4p/linked_data_authorities/tree/master/qa_geonames)
+  * [qa_getty](https://github.com/ld4p/linked_data_authorities/tree/master/qa_getty)
+  * [qa_loc](https://github.com/ld4p/linked_data_authorities/tree/master/qa_loc) (names, subjects, genres, music performance, and demographics)
+  * [qa_mesh](https://github.com/ld4p/linked_data_authorities/tree/master/qa_mesh)
+  * [qa_nalt](https://github.com/ld4p/linked_data_authorities/tree/master/qa_nalt)
+  * [qa_oclcfast](https://github.com/ld4p/linked_data_authorities/tree/master/qa_oclcfast)  
   
 See each of the sub-directories of this project starting with `qa_`.  Each addresses a separate authority.  Each vocabulary has it's own README that addresses configuration and setup specific to that authority.  General information about setup is in this README.
 
@@ -53,7 +53,7 @@ There are two servers that drive this system.
 
 2. questioning authority normalization server - This server provides access to linked data authorities and a process for converting linked data from the various ontologies to a normalized json format that is the same for all ontologies.  There are two primary ways to setup this server.
   1. For Ruby applications, include the [questioning authority (qa) gem](https://rubygems.org/gems/qa).  The copy in the configurations and validations from this repo into the same directory in your app for each authority you want to support.  
-  2. For non-ruby applications or for ruby applications that want to share a single access point, you can clone or fork the [ld4l/qa_server](https://github.com/ld4l-labs/qa_server) which is a stand alone small application that includes the questioning authority gem.  The qa_server app includes all the configurations in this repo.  If you do not want all of them, you can remove the authority configuration and validation files.  
+  2. For non-ruby applications or for ruby applications that want to share a single access point, you can clone or fork the [ld4p/qa_server](https://github.com/ld4p/qa_server) which is a stand alone small application that includes the questioning authority gem.  The qa_server app includes all the configurations in this repo.  If you do not want all of them, you can remove the authority configuration and validation files.  
 
 More information on setting up these servers follows in the Usage section.
 
@@ -113,13 +113,13 @@ For reference, this is the full workflow we follow when adding a new authority's
 
 ### One time process
 
-For your convenience, [QA Server](https://github.com/ld4l-labs/qa_server) app was created that can be used as the questioning authority normalization server.  See [QA Server's README](https://github.com/ld4l-labs/qa_server/blob/master/README.md) for Installation Instructions.
+For your convenience, [QA Server](https://github.com/ld4p/qa_server) app was created that can be used as the questioning authority normalization server.  See [QA Server's README](https://github.com/ld4p/qa_server/blob/master/README.md) for Installation Instructions.
 
 ### Per vocabulary process
 
 * Add a configuration file for each vocabulary you want to use to `/config/authorities/linked_data` in the server app.  
   
-See QA Server's [Supported Authorities](https://github.com/ld4l-labs/qa_server/blob/master/README.md#supported-authorities) documentation for more information.
+See QA Server's [Supported Authorities](https://github.com/ld4p/qa_server/blob/master/README.md#supported-authorities) documentation for more information.
 
 
 ## Debugging
@@ -237,4 +237,4 @@ Sample qa_server term fetch results...
 
 If you don't see any results, you can check that the correct URL for the linked data server is generated.  In the QA server, search log/development.log for `QA Linked Data term url:`.  Then you can copy/paste that URL into a browser or use curl in the terminal to verify that the generated URL accessing the linked data authority server actually returns data as expected.
 
-See [qa_server's validation process](https://github.com/ld4l-labs/qa_server#connection-and-accuracy-validations) for an interactive approach to testing connections and accuracy.
+See [qa_server's validation process](https://github.com/ld4p/qa_server#connection-and-accuracy-validations) for an interactive approach to testing connections and accuracy.
