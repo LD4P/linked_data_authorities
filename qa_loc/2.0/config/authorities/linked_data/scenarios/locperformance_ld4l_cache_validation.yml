@@ -4,6 +4,84 @@ authority:
 search:
   -
     query: band
+  -
+    query: conductor
+    position: 10
+    subject_uri: "http://id.loc.gov/authorities/performanceMediums/mp2013015171"
+    replacements:
+      maxRecords: '20'
+  -
+    query: tāshā
+    position: 10
+    subject_uri: "http://id.loc.gov/authorities/performanceMediums/mp2013015718"
+    replacements:
+      maxRecords: '20'
+  -
+    query: instrumental ensemble
+    position: 10
+    subject_uri: "http://id.loc.gov/authorities/performanceMediums/mp2013015812"
+    replacements:
+      maxRecords: '20'
+  -
+    query: tʻaepʻyŏngso
+    position: 10
+    subject_uri: "http://id.loc.gov/authorities/performanceMediums/mp2013015693"
+    replacements:
+      maxRecords: '20'
+  -
+    query: bassoon
+    position: 10
+    subject_uri: "http://id.loc.gov/authorities/performanceMediums/mp2013015074"
+    replacements:
+      maxRecords: '20'
+  -
+    query: continuo
+    position: 10
+    subject_uri: "http://id.loc.gov/authorities/performanceMediums/mp2013015173"
+    replacements:
+      maxRecords: '20'
+  -
+    query: pin peat
+    position: 10
+    subject_uri: "http://id.loc.gov/authorities/performanceMediums/mp2014015025"
+    replacements:
+      maxRecords: '20'
+  -
+    query: solo vocal ensemble
+    position: 10
+    subject_uri: "http://id.loc.gov/authorities/performanceMediums/mp2013015841"
+    replacements:
+      maxRecords: '20'
+  -
+    query: MIDI controller
+    position: 10
+    subject_uri: "http://id.loc.gov/authorities/performanceMediums/mp2013015474"
+    replacements:
+      maxRecords: '20'
+  -
+    query: heliphon
+    position: 10
+    subject_uri: "http://id.loc.gov/authorities/performanceMediums/mp2013015339"
+    replacements:
+      maxRecords: '20'
+  -
+    query: singing bowl
+    position: 10
+    subject_uri: "http://id.loc.gov/authorities/performanceMediums/mp2013015647"
+    replacements:
+      maxRecords: '20'
+  -
+    query: alto saxophone
+    position: 10
+    subject_uri: "http://id.loc.gov/authorities/performanceMediums/mp2013015015"
+    replacements:
+      maxRecords: '20'
+  -
+    query: spoils of war (musical instrument)
+    position: 10
+    subject_uri: "http://id.loc.gov/authorities/performanceMediums/mp2016015015"
+    replacements:
+      maxRecords: '20'
 term:
   -
     identifier: 'http://id.loc.gov/authorities/performanceMediums/mp2013015793'
