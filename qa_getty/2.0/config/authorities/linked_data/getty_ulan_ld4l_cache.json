@@ -39,7 +39,8 @@
           "@type": "IriTemplateMapping",
           "variable": "query",
           "property": "hydra:freetextQuery",
-          "required": true
+          "required": true,
+          "encode": true
         },
         {
           "@type": "IriTemplateMapping",
