@@ -1,0 +1,237 @@
+{
+  "QA_CONFIG_VERSION": "2.1",
+  "prefixes": {
+    "loc":     "http://id.loc.gov/vocabulary/identifiers/",
+    "madsrdf": "http://www.loc.gov/mads/rdf/v1#",
+    "vivo":    "http://vivoweb.org/ontology/core#"
+  },
+  "term": {
+    "url": {
+      "@context": "http://www.w3.org/ns/hydra/context.jsonld",
+      "@type":    "IriTemplate",
+      "template": "http://services.ld4l.org/ld4l_services/loc_rwo_name_lookup.jsp?uri={term_uri}",
+      "variableRepresentation": "BasicRepresentation",
+      "mapping": [
+        {
+          "@type":    "IriTemplateMapping",
+          "variable": "term_uri",
+          "property": "hydra:freetextQuery",
+          "required": true,
+          "encode":   true
+        }
+      ]
+    },
+    "qa_replacement_patterns": {
+      "term_id": "term_uri"
+    },
+    "term_id": "URI",
+    "results": {
+      "id_ldpath":       "^madsrdf:identifiesRWO/loc:lccn ::xsd:string",
+      "label_ldpath":    "rdfs:label ::xsd:string",
+      "altlabel_ldpath": "^madsrdf:identifiesRWO/madsrdf:hasVariant/madsrdf:variantLabel :: xsd:string",
+      "sameas_ldpath":   "skos:exactMatch ::xsd:anyURI"
+    }
+  },
+  "search": {
+    "url": {
+      "@context": "http://www.w3.org/ns/hydra/context.jsonld",
+      "@type": "IriTemplate",
+      "template": "http://services.ld4l.org/ld4l_services/loc_rwo_name_batch.jsp?{?query}&{?maxRecords}&{?startRecord}&{?entity}&{?lang}",
+      "variableRepresentation": "BasicRepresentation",
+      "mapping": [
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "query",
+          "property": "hydra:freetextQuery",
+          "required": true,
+          "encode": true
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "entity",
+          "property": "hydra:freetextQuery",
+          "required": false,
+          "default": ""
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "maxRecords",
+          "property": "hydra:freetextQuery",
+          "required": false,
+          "default": "20"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "startRecord",
+          "property": "hydra:freetextQuery",
+          "required": false,
+          "default": "1"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "lang",
+          "property": "hydra:freetextQuery",
+          "required": false,
+          "default": "en"
+        }
+      ]
+    },
+    "qa_replacement_patterns": {
+      "query":   "query",
+      "subauth": "entity"
+    },
+    "results": {
+      "id_ldpath":    "^madsrdf:identifiesRWO/loc:lccn ::xsd:string",
+      "label_ldpath": "rdfs:label ::xsd:string",
+      "sort_ldpath":  "vivo:rank ::xsd:string"
+    },
+    "context": {
+      "groups": {
+        "dates": {
+          "group_label_i18n": "qa.linked_data.authority.locnames_ld4l_cache.dates",
+          "group_label_default": "Dates"
+        },
+        "places": {
+          "group_label_i18n": "qa.linked_data.authority.locnames_ld4l_cache.places",
+          "group_label_default": "Places"
+        }
+      },
+      "properties": [
+        {
+          "property_label_default": "Preferred label",
+          "property_label_i18n": "qa.linked_data.authority.locnames_ld4l_cache.type_label",
+          "ldpath": "rdfs:label :: xsd:string",
+          "selectable": true,
+          "drillable": false
+        },
+        {
+          "property_label_default": "Type",
+          "property_label_i18n": "qa.linked_data.authority.locnames_ld4l_cache.type_label",
+          "ldpath": "rdf:type :: xsd:string",
+          "selectable": false,
+          "drillable": false
+        },
+        {
+          "property_label_default": "Descriptor",
+          "property_label_i18n": "qa.linked_data.authority.locnames_ld4l_cache.type_label",
+          "ldpath": "(madsrdf:entityDescriptor/madsrdf:authoritativeLabel) | (madsrdf:entityDescriptor/skos:prefLabel) | (madsrdf:entityDescriptor/rdfs:label) :: xsd:string",
+          "selectable": false,
+          "drillable": false,
+          "subauth": ["person", "organization"]
+        },
+        {
+          "group_id": "dates",
+          "property_label_default": "Birth date",
+          "property_label_i18n": "qa.linked_data.authority.locnames_ld4l_cache.birth_date",
+          "ldpath": "madsrdf:birthDate/rdfs:label :: xsd:string",
+          "selectable": false,
+          "drillable": false,
+          "optional": true,
+          "subauth": ["person"]
+        },
+        {
+          "group_id": "dates",
+          "property_label_default": "Death date",
+          "property_label_i18n": "qa.linked_data.authority.locnames_ld4l_cache.death_date",
+          "ldpath": "madsrdf:deathDate/rdfs:label :: xsd:string",
+          "selectable": false,
+          "drillable": false,
+          "subauth": ["person"]
+        },
+        {
+          "group_id": "places",
+          "property_label_default": "Location",
+          "property_label_i18n": "qa.linked_data.authority.locnames_ld4l_cache.location",
+          "ldpath": "(madsrdf:associatedLocale/skos:prefLabel) | (madsrdf:associatedLocale/rdfs:label) :: xsd:string",
+          "selectable": false,
+          "drillable": false,
+          "subauth": ["organization", "family"]
+        },
+        {
+          "property_label_default": "Affiliation",
+          "property_label_i18n": "qa.linked_data.authority.locnames_ld4l_cache.field_of_activity",
+          "ldpath": "(madsrdf:hasAffiliation/madsrdf:organization/skos:prefLabel) | (madsrdf:hasAffiliation/madsrdf:organization/rdfs:label) | (madsrdf:hasAffiliation/madsrdf:organization/madsrdf:authoritativeLabel) :: xsd:string",
+          "selectable": false,
+          "drillable": false,
+          "subauth": ["person", "organization"]
+        },
+        {
+          "property_label_default": "Field of activity",
+          "property_label_i18n": "qa.linked_data.authority.locnames_ld4l_cache.field_of_activity",
+          "ldpath": "(madsrdf:fieldOfActivity/skos:prefLabel) | (madsrdf:fieldOfActivity/rdfs:label) :: xsd:string",
+          "selectable": false,
+          "drillable": false,
+          "subauth": ["person", "organization"]
+        },
+        {
+          "property_label_default": "Occupation",
+          "property_label_i18n": "qa.linked_data.authority.locnames_ld4l_cache.occupation",
+          "ldpath": "(madsrdf:occupation/skos:prefLabel) | (madsrdf:occupation/rdfs:label) | (madsrdf:occupation/madsrdf:authoritativeLabel) :: xsd:string",
+          "selectable": false,
+          "drillable": false,
+          "subauth": ["person", "organization"]
+        },
+        {
+          "group_id": "places",
+          "property_label_default": "Birth place",
+          "property_label_i18n": "qa.linked_data.authority.locnames_ld4l_cache.birth_place",
+          "ldpath": "(madsrdf:birthPlace/skos:prefLabel) | (madsrdf:birthPlace/rdfs:label) :: xsd:string",
+          "selectable": false,
+          "drillable": false,
+          "subauth": ["person"]
+        },
+        {
+          "group_id": "places",
+          "property_label_default": "Death place",
+          "property_label_i18n": "qa.linked_data.authority.locnames_ld4l_cache.death_place",
+          "ldpath": "(madsrdf:deathPlace/skos:prefLabel) | (madsrdf:deathPlace/rdfs:label) :: xsd:string",
+          "selectable": false,
+          "drillable": false,
+          "subauth": ["person"]
+        },
+        {
+          "property_label_default": "VIAF match",
+          "property_label_i18n": "qa.linked_data.authority.locnames_ld4l_cache.viaf_match",
+          "ldpath": "^madsrdf:identifiesRWO/skos:exactMatch :: xsd:string",
+          "selectable": false,
+          "drillable": false,
+          "subauth": ["person", "organization"]
+        },
+        {
+          "property_label_default": "Variant label",
+          "property_label_i18n": "qa.linked_data.authority.locnames_ld4l_cache.variant_label",
+          "ldpath": "^madsrdf:identifiesRWO/madsrdf:hasVariant/madsrdf:variantLabel :: xsd:string",
+          "selectable": false,
+          "drillable": false,
+          "subauth": ["person", "organization"]
+        },
+        {
+          "property_label_default": "Citation note",
+          "property_label_i18n": "qa.linked_data.authority.locnames_ld4l_cache.citation_note",
+          "ldpath": "^madsrdf:identifiesRWO/madsrdf:hasSource/madsrdf:citation-note :: xsd:string",
+          "selectable": false,
+          "drillable": false
+        },
+        {
+          "property_label_default": "Citation source",
+          "property_label_i18n": "qa.linked_data.authority.locnames_ld4l_cache.citation_source",
+          "ldpath": "^madsrdf:identifiesRWO/madsrdf:hasSource/madsrdf:citation-source :: xsd:string",
+          "selectable": false,
+          "drillable": false
+        },
+        {
+          "property_label_default": "Editorial note",
+          "property_label_i18n": "qa.linked_data.authority.locnames_ld4l_cache.editorial_note",
+          "ldpath": "^madsrdf:identifiesRWO/madsrdf:editorialNote :: xsd:string",
+          "selectable": false,
+          "drillable": false
+        }
+      ]
+    },
+    "subauthorities": {
+      "person":         "Person",
+      "organization":   "Organization",
+      "family":         "Family"
+    }
+  }
+}

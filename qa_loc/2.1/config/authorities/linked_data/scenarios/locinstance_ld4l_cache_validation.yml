@@ -1,0 +1,9 @@
+---
+authority:
+  service: ld4l_cache
+search:
+  -
+    query: workers
+term:
+  -
+    identifier: 'http://id.loc.gov/authorities/demographicTerms/dg2015060460'

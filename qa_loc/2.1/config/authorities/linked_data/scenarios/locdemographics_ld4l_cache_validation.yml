@@ -1,0 +1,53 @@
+---
+authority:
+  service: ld4l_cache
+  context: true
+search:
+    -
+        query: workers
+    -
+        query: Biologists
+        position: 1
+        subject_uri: "http://id.loc.gov/authorities/demographicTerms/dg2015060613"
+        replacements:
+            maxRecords: '5'
+    -
+        query: Biologists
+        position: 10
+        subject_uri: "http://id.loc.gov/authorities/demographicTerms/dg2016060468"
+        replacements:
+            maxRecords: '20'
+    -
+        query: Kiwis
+        position: 1
+        subject_uri: "http://id.loc.gov/authorities/demographicTerms/dg2015060357"
+        replacements:
+            maxRecords: '5'
+    -
+        query: New Zealanders
+        position: 8
+        subject_uri: "http://id.loc.gov/authorities/demographicTerms/dg2016060205"
+        replacements:
+            maxRecords: '15'
+    -
+        query: New Zealanders
+        position: 8
+        subject_uri: "http://id.loc.gov/authorities/demographicTerms/dg2015060330"
+        replacements:
+            maxRecords: '15'
+    -
+        query: African Americans
+        position: 5
+        subject_uri: "http://id.loc.gov/authorities/demographicTerms/dg2015060859"
+        replacements:
+            maxRecords: '10'
+    -
+        query: Micmac
+        position: 1
+        subject_uri: "http://id.loc.gov/authorities/demographicTerms/dg2016060011"
+        replacements:
+            maxRecords: '5'
+term:
+  -
+    identifier: 'http://id.loc.gov/authorities/demographicTerms/dg2015060460'
+

@@ -1,0 +1,176 @@
+{
+  "QA_CONFIG_VERSION": "2.1",
+  "prefixes": {
+    "bf":   "http://id.loc.gov/ontologies/bibframe/",
+    "vivo": "http://vivoweb.org/ontology/core#"
+  },
+  "term": {
+    "url": {
+      "@context": "http://www.w3.org/ns/hydra/context.jsonld",
+      "@type":    "IriTemplate",
+      "template": "http://services.ld4l.org/ld4l_services/share_vde/lookup.jsp?site=duke&uri={term_uri}",
+      "variableRepresentation": "BasicRepresentation",
+      "mapping": [
+        {
+          "@type":    "IriTemplateMapping",
+          "variable": "term_uri",
+          "property": "hydra:freetextQuery",
+          "required": true
+        }
+      ]
+    },
+    "qa_replacement_patterns": {
+      "term_id": "term_uri"
+    },
+    "term_id": "URI",
+    "results": {
+      "label_ldpath": "bf:title/rdfs:label :: xsd:string"
+    }
+  },
+  "search": {
+    "url": {
+      "@context": "http://www.w3.org/ns/hydra/context.jsonld",
+      "@type": "IriTemplate",
+      "template": "http://services.ld4l.org/ld4l_services/share_vde/duke_batch.jsp?{?query}&{?entity}&{?maxRecords}&{?startRecord}&{?lang}",
+      "variableRepresentation": "BasicRepresentation",
+      "mapping": [
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "query",
+          "property": "hydra:freetextQuery",
+          "required": true,
+          "encode": true
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "entity",
+          "property": "hydra:freetextQuery",
+          "required": false,
+          "default": ""
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "maxRecords",
+          "property": "hydra:freetextQuery",
+          "required": false,
+          "default": "20"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "startRecord",
+          "property": "hydra:freetextQuery",
+          "required": false,
+          "default": "1"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "lang",
+          "property": "hydra:freetextQuery",
+          "required": false,
+          "default": "en"
+        }
+      ]
+    },
+    "qa_replacement_patterns": {
+      "query":   "query",
+      "subauth": "entity"
+    },
+    "results": {
+      "label_ldpath": "bf:title/rdfs:label :: xsd:string",
+      "sort_ldpath":  "vivo:rank"
+    },
+    "context": {
+      "properties": [
+        {
+          "property_label_default": "Title",
+          "property_label_i18n": "qa.linked_data.authority.sharevde_duke_instance_ld4l_cache.title",
+          "ldpath": "bf:title/rdfs:label :: xsd:string",
+          "selectable": true,
+          "drillable": false
+        },
+        {
+          "property_label_default": "Type",
+          "property_label_i18n": "qa.linked_data.authority.sharevde_duke_instance_ld4l_cache.type",
+          "ldpath": "rdf:type :: xsd:string",
+          "selectable": false,
+          "drillable": false
+        },
+        {
+          "property_label_default": "Content",
+          "property_label_i18n": "qa.linked_data.authority.sharevde_duke_instance_ld4l_cache.content",
+          "ldpath": "(bf:content/skos:prefLabel) | (bf:content/rdfs:label) :: xsd:string",
+          "selectable": false,
+          "drillable": false
+        },
+        {
+          "property_label_default": "Contributor",
+          "property_label_i18n": "qa.linked_data.authority.sharevde_duke_instance_ld4l_cache.contributor",
+          "ldpath": "bf:contribution/bf:agent/rdfs:label :: xsd:string",
+          "selectable": false,
+          "drillable": false
+        },
+        {
+          "property_label_default": "Role",
+          "property_label_i18n": "qa.linked_data.authority.sharevde_duke_instance_ld4l_cache.role",
+          "ldpath": "bf:contribution/bf:agent/bf:role :: xsd:string",
+          "selectable": false,
+          "drillable": false
+        },
+        {
+          "property_label_default": "Origin date",
+          "property_label_i18n": "qa.linked_data.authority.sharevde_duke_instance_ld4l_cache.origin_date",
+          "ldpath": "bf:originDate :: xsd:string",
+          "selectable": false,
+          "drillable": false
+        },
+        {
+          "property_label_default": "Carrier",
+          "property_label_i18n": "qa.linked_data.authority.sharevde_duke_instance_ld4l_cache.carrier",
+          "ldpath": "bf:carrier :: xsd:string",
+          "selectable": false,
+          "drillable": false
+        },
+        {
+          "property_label_default": "Media",
+          "property_label_i18n": "qa.linked_data.authority.sharevde_duke_instance_ld4l_cache.media",
+          "ldpath": "bf:media :: xsd:string",
+          "selectable": false,
+          "drillable": false
+        },
+        {
+          "property_label_default": "Responsibility statement",
+          "property_label_i18n": "qa.linked_data.authority.sharevde_duke_instance_ld4l_cache.responsibility_statement",
+          "ldpath": "bf:responsibility_statement :: xsd:string",
+          "selectable": false,
+          "drillable": false
+        },
+        {
+          "property_label_default": "Provision statement",
+          "property_label_i18n": "qa.linked_data.authority.sharevde_duke_instance_ld4l_cache.provision_statement",
+          "ldpath": "bf:provision_statement :: xsd:string",
+          "selectable": false,
+          "drillable": false
+        },
+        {
+          "property_label_default": "Dimensions",
+          "property_label_i18n": "qa.linked_data.authority.sharevde_duke_instance_ld4l_cache.dimensions",
+          "ldpath": "bf:dimensions :: xsd:string",
+          "selectable": false,
+          "drillable": false
+        },
+        {
+          "property_label_default": "Language",
+          "property_label_i18n": "qa.linked_data.authority.sharevde_duke_instance_ld4l_cache.language",
+          "ldpath": "(bf:language/rdfs:label) | (bf:language/skos:prefLabel) :: xsd:string",
+          "selectable": false,
+          "drillable": false
+        }
+      ]
+    },
+    "subauthorities": {
+      "work":      "Work",
+      "instance":  "Instance",
+      "superwork": "SuperWork"
+    }
+  }
+}

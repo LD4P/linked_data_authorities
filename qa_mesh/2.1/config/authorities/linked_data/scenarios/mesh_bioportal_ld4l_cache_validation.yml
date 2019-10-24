@@ -1,0 +1,11 @@
+---
+authority:
+    service: ld4l_cache
+search:
+  -
+    query: malignant
+    maxRecords: '4'
+    result_size: 1800
+term:
+  -
+    identifier: 'http://purl.bioontology.org/ontology/MESH/C535700'

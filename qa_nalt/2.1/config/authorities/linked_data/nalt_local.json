@@ -1,0 +1,76 @@
+{
+  "QA_CONFIG_VERSION": "2.1",
+  "prefixes": {
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#"
+  },
+  "term": {
+    "url": {
+      "@context": "http://www.w3.org/ns/hydra/context.jsonld",
+      "@type":    "IriTemplate",
+      "template": "http://your.skosmos.server.host/rest/v1/nalt/data?uri={?term_uri}",
+      "variableRepresentation": "BasicRepresentation",
+      "mapping": [
+        {
+          "@type":    "IriTemplateMapping",
+          "variable": "term_uri",
+          "property": "hydra:freetextQuery",
+          "required": true,
+          "encode":   false
+        }
+      ]
+    },
+    "qa_replacement_patterns": {
+      "term_id": "term_uri"
+    },
+    "term_id": "URI",
+    "language": ["en"],
+    "results": {
+      "label_ldpath":    "skos:prefLabel ::xsd:string",
+      "altlabel_ldpath": "skos:altLabel ::xsd:string",
+      "broader_ldpath":  "skos:broader ::xsd:anyURI",
+      "narrower_ldpath": "skos:narrower ::xsd:anyURI",
+      "sameas_ldpath":   "skos:exactMatch ::xsd:anyURI"
+    }
+  },
+  "search": {
+    "url": {
+      "@context": "http://www.w3.org/ns/hydra/context.jsonld",
+      "@type":    "IriTemplate",
+      "template": "http://your.skosmos.server.host/rest/v1/nalt/search?query=*{?query}*&lang={?lang}&maxhits={?maxRecords}",
+      "variableRepresentation": "BasicRepresentation",
+      "mapping": [
+        {
+          "@type":    "IriTemplateMapping",
+          "variable": "query",
+          "property": "hydra:freetextQuery",
+          "required": true,
+          "encode": true
+        },
+        {
+          "@type":    "IriTemplateMapping",
+          "variable": "maxRecords",
+          "property": "hydra:freetextQuery",
+          "required": false,
+          "default":  "20"
+        },
+        {
+          "@type":    "IriTemplateMapping",
+          "variable": "lang",
+          "property": "hydra:freetextQuery",
+          "required": false,
+          "default":  "en"
+        }
+      ]
+    },
+    "qa_replacement_patterns": {
+      "query": "query"
+    },
+    "results": {
+      "id_ldpath":    "dcterms:identifier ::xsd:string",
+      "label_ldpath": "skos:prefLabel ::xsd:string",
+      "sort_ldpath":  "skos:prefLabel ::xsd:string"
+    }
+  }
+}
+
