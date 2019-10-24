@@ -1,0 +1,193 @@
+{
+  "QA_CONFIG_VERSION": "2.1",
+  "prefixes": {
+    "vivo": "http://vivoweb.org/ontology/core#"
+  },
+  "term": {},
+  "search": {
+    "url": {
+      "@context": "http://www.w3.org/ns/hydra/context.jsonld",
+      "@type": "IriTemplate",
+      "template": "http://services.ld4l.org/ld4l_services/rda_batch.jsp?{?entity}&{?query}&{?maxRecords}&{?startRecord}&{?lang}",
+      "variableRepresentation": "BasicRepresentation",
+      "mapping": [
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "query",
+          "property": "hydra:freetextQuery",
+          "required": true,
+          "encode": true
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "entity",
+          "property": "hydra:freetextQuery",
+          "required": true
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "maxRecords",
+          "property": "hydra:freetextQuery",
+          "required": false,
+          "default": "20"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "startRecord",
+          "property": "hydra:freetextQuery",
+          "required": false,
+          "default": "1"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "lang",
+          "property": "hydra:freetextQuery",
+          "required": false,
+          "default": "en"
+        }
+      ]
+    },
+    "qa_replacement_patterns": {
+      "query":   "query",
+      "subauth": "entity"
+    },
+    "results": {
+      "label_ldpath": "skos:prefLabel ::xsd:string",
+      "sort_ldpath":  "vivo:rank ::xsd:string"
+    },
+    "context": {
+      "groups": {
+        "hierarchy": {
+          "group_label_i18n": "qa.linked_data.authority.rda_carrier_type_ld4l_cache.hierarchy",
+          "group_label_default": "Hierarchy"
+        }
+      },
+      "properties": [
+        {
+          "property_label_i18n": "qa.linked_data.authority.rda_carrier_type_ld4l_cache.authoritative_label",
+          "property_label_default": "Preferred label",
+          "ldpath": "skos:prefLabel :: xsd:string",
+          "selectable": true,
+          "drillable": false
+        },
+        {
+          "property_label_i18n": "qa.linked_data.authority.rda_carrier_type_ld4l_cache.alternative_label",
+          "property_label_default": "Alternative label",
+          "ldpath": "skos:altLabel :: xsd:string",
+          "selectable": true,
+          "drillable": false
+        },
+        {
+          "group_id": "hierarchy",
+          "property_label_i18n": "qa.linked_data.authority.rda_carrier_type_ld4l_cache.broader",
+          "property_label_default": "Broader",
+          "ldpath": "skos:broader :: xsd:string",
+          "selectable": true,
+          "drillable": true,
+          "expansion_label_ldpath": "skos:prefLabel ::xsd:string"
+        },
+        {
+          "group_id": "hierarchy",
+          "property_label_i18n": "qa.linked_data.authority.rda_carrier_type_ld4l_cache.narrower",
+          "property_label_default": "Narrower",
+          "ldpath": "skos:narrower :: xsd:string",
+          "selectable": true,
+          "drillable": true,
+          "expansion_label_ldpath": "skos:prefLabel ::xsd:string"
+        },
+        {
+          "property_label_i18n": "qa.linked_data.authority.rda_carrier_type_ld4l_cache.related",
+          "property_label_default": "Related",
+          "ldpath": "skos:related/skos:prefLabel :: xsd:string",
+          "selectable": true,
+          "drillable": false
+        },
+        {
+          "property_label_i18n": "qa.linked_data.authority.rda_carrier_type_ld4l_cache.definition",
+          "property_label_default": "Definition",
+          "ldpath": "skos:definition :: xsd:string",
+          "selectable": true,
+          "drillable": false
+        },
+        {
+          "property_label_i18n": "qa.linked_data.authority.rda_carrier_type_ld4l_cache.scope_note",
+          "property_label_default": "Scope note",
+          "ldpath": "skos:scopeNote :: xsd:string",
+          "selectable": true,
+          "drillable": false
+        },
+        {
+          "property_label_i18n": "qa.linked_data.authority.rda_carrier_type_ld4l_cache.status",
+          "property_label_default": "Status",
+          "ldpath": "skos:status/skos:prefLabel :: xsd:string",
+          "selectable": true,
+          "drillable": false
+        }
+      ]
+    },
+    "subauthorities": {
+      "aspect_ratio":        "AspectRatio",
+      "collective_title":    "CollTitle",
+      "illustrative_content": "IllusContent",
+      "mode_of_issuance":    "ModeIssue",
+      "form_of_musical_notation": "MusNotation",
+      "carrier_extent_unit": "RDACarrierEU",
+      "carrier_type":        "RDACarrierType",
+      "cartographic_data_type": "RDACartoDT",
+      "colour_content":      "RDAColourContent",
+      "content_type":        "RDAContentType",
+      "generation":          "RDAGeneration",
+      "material":            "RDAMaterial",
+      "media_type":          "RDAMediaType",
+      "polarity":            "RDAPolarity",
+      "recording_sources":   "RDARecordingSources",
+      "reduction_ratio":     "RDAReductionRatio",
+      "regional_encoding":   "RDARegionalEncoding",
+      "terms":               "RDATerms",
+      "type_of_binding":     "RDATypeOfBinding",
+      "base_material":       "RDAbaseMaterial",
+      "production_method":   "RDAproductionMethod",
+      "form_of_tactile_notation": "TacNotation",
+      "bibliographic_format": "bookFormat",
+      "broadcast_standard":  "broadcastStand",
+      "config_playback_channels": "configPlayback",
+      "file_type":           "fileType",
+      "font_size":           "fontSize",
+      "format_of_notated_music": "formatNoteMus",
+      "frequency":           "frequency",
+      "gender":              "gender",
+      "groove_pitch":        "groovePitch",
+      "groove_width":        "grooveWidth",
+      "layout":              "layout",
+      "form_of_notated_movement": "noteMove",
+      "presentation_format": "presFormat",
+      "prod_tactile":        "prodTactile",
+      "recording_medium":    "recMedium",
+      "rofch":               "rofch",
+      "rofchrda":            "rofchrda",
+      "rofem":               "rofem",
+      "rofer":               "rofer",
+      "rofet":               "rofet",
+      "roffgrda":            "roffgrda",
+      "rofhf":               "rofhf",
+      "rofid":               "rofid",
+      "rofim":               "rofim",
+      "rofin":               "rofin",
+      "rofit":               "rofit",
+      "rofitrda":            "rofitrda",
+      "rofrm":               "rofrm",
+      "rofrr":               "rofrr",
+      "rofrt":               "rofrt",
+      "rofsf":               "rofsf",
+      "rofsfrda":            "rofsfrda",
+      "rofsm":               "rofsm",
+      "scale_designation":   "scale",
+      "sound_content":       "soundCont",
+      "special_playback":    "specPlayback",
+      "status_of_identification": "statIdentification",
+      "track_config":        "trackConfig",
+      "type_of_recording":   "typeRec",
+      "video_format":        "videoFormat"
+    }
+  }
+}

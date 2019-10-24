@@ -1,0 +1,16 @@
+---
+authority:
+  service: ld4l_cache
+  context: true
+search:
+  -
+    query: Cayuga
+  -
+    query: Cayuga
+    subauth: geographic
+  -
+    query: ALA
+    subauth: conference
+term:
+  -
+    identifier: 'http://id.loc.gov/authorities/names/n92016188'

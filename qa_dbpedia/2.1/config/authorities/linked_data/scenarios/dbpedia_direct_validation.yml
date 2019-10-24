@@ -1,0 +1,6 @@
+---
+authority:
+  service: direct
+term:
+  -
+    identifier: 'http://dbpedia.org/resource/Barack_Obama'

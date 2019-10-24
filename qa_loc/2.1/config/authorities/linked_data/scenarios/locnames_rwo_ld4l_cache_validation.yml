@@ -1,0 +1,27 @@
+---
+authority:
+  service: ld4l_cache
+  context: true
+search:
+  -
+    query: 'mark twain'
+  -
+    query: 'Twain, Mark, 1835-1910'
+    subauth: person
+  -
+    query: 'mark twain'
+    subauth: organization
+  -
+    query: 'twain'
+    subauth: family
+  -
+    query: 'Twain, Mark, 1835-1910'
+    subauth: person
+    position: 1
+    subject_uri: "http://id.loc.gov/rwo/agents/n79021164"
+    replacements:
+      maxRecords: '10'
+      context: true
+term:
+  -
+    identifier: 'http://id.loc.gov/rwo/agents/n79021164'

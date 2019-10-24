@@ -1,0 +1,10 @@
+---
+authority:
+  service: ld4l_cache
+  context: true
+search:
+  -
+    query: science
+term:
+  -
+    identifier: 'http://id.loc.gov/authorities/subjects/sh2003008312'

@@ -1,0 +1,10 @@
+---
+authority:
+  service: ld4l_cache
+  context: true
+search:
+  -
+    query: malignant
+term:
+  -
+    identifier: 'http://id.nlm.nih.gov/mesh/T727346'
