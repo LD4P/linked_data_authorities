@@ -23,7 +23,7 @@ The configurations in `config/authorities/linked_data` directory are designed to
 * [Swagger Config](https://github.com/NatLibFi/Skosmos/blob/master/swagger.json)
 * [Download](https://aims-fao.atlassian.net/wiki/spaces/AGV/pages/2949126/Releases) (n-triples or rdf-xml)
 
-## Creating a local cache of NALT authority data
+## Creating a local cache of AGROVOC authority data
 
 You can create a local cache of AGROVOC authority data by [downloading](https://aims-fao.atlassian.net/wiki/spaces/AGV/pages/2949126/Releases) (n-triples or rdf-xml) it into a local triplestore.  There are a number of triplestores that you can use for this purpose.  See the [ld4p/linked_data_authorities documentation](https://github.com/ld4p/linked_data_authorities/blob/master/README.md) for more information on setting up a local cache server. 
 
